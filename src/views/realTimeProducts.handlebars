@@ -1,0 +1,54 @@
+<div>
+  <form action="" id="formulario">
+    <fieldset>
+        <legend>Agregar Producto</legend>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Nombre producto"
+      />
+
+      <input
+        type="num"
+        id="precio"
+        name="precio"
+        placeholder="Precio producto"
+      />
+      <input
+        type="text"
+        id="codigo"
+        name="codigo"
+        placeholder="Código producto"
+      />
+
+      <button type="submit">Agregar</button>
+    </fieldset>
+  </form>
+  <form action="" id="formRemove">
+    <fieldset>
+        <legend>Eliminar producto</legend>
+        <input type="num" id="idProduct" name="idProduct" placeholder="Id del producto">
+        <button type="submit">Eliminar</button>
+    </fieldset>
+  </form>
+
+  <h1>LISTA DE PRODUCTOS</h1>
+  <hr />
+  <ul id="lista">
+    {{#each products}}
+      <li class="container">
+        <p>id: {{this.id}}</p>
+        <p>Nombre:{{this.title}}</p>
+        <p>Descripción:{{this.description}}</p>
+        <p>Precio: {{this.price}}</p>
+        <p>Código: {{this.code}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <p>Categoría: {{this.category}}</p>
+        <p>Status: {{this.status}}</p>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script  type="module" src="/js/index.js"></script>
