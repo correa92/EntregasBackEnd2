@@ -6,6 +6,7 @@ const userUpdateValidation = z.object({
   lastName: z.string().min(10).max(35),
   email: z.string().email(),
   age: z.number(),
+  password: z.string(),
 });
 
 export default userUpdateValidation;

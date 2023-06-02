@@ -34,11 +34,12 @@ class UserMongooseDao {
   }
 
   async getOneByEmail(email) {
+    
     const userDocument = await userSchema.findOne({ email });
 
-    // if (!userDocument) {
-    //   throw new Error('Email dont exist')
-    // }
+    if (!userDocument) {
+      throw new Error('Email dont exist')
+    }
 
     return {
       id: userDocument?._id,
@@ -52,7 +53,7 @@ class UserMongooseDao {
 
   async create(data) {
     const userDocument = await userSchema.create(data);
-
+   
     return {
       id: userDocument._id,
       firstName: userDocument.firstName,
@@ -60,6 +61,7 @@ class UserMongooseDao {
       email: userDocument.email,
       age: userDocument.age,
       password: userDocument.password,
+      cart: userDocument.cart
     };
   }
 

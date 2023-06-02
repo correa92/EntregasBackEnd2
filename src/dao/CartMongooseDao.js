@@ -10,9 +10,21 @@ class CartMongooseDao {
     };
   }
 
+  async getCart(id){
+    const cartDocument = await cartSchema.findOne({ _id: id })
+
+    return {
+      id: cartDocument?._id,
+      products: cartDocument?.products,
+    };
+  }
+
   async create() {
     const cartDocument = await cartSchema.create({ products: [] });
-
+    
+    if (!cartDocument) {
+      throw new Error('Could not create cart')
+    }
     return {
       id: cartDocument._id,
       products: cartDocument.products,
@@ -20,6 +32,7 @@ class CartMongooseDao {
   }
 
   async updateCart(id, data) {
+
     const cartDocument = await cartSchema.findOneAndUpdate({ _id: id }, data, {
       new: true,
     });

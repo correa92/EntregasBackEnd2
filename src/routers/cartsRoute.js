@@ -15,7 +15,7 @@ cartsRoute.get("/:cid", findOne);
 
 cartsRoute.delete("/:cid", removeAllProductsFromCart);
 
-cartsRoute.delete("/:cid/products/:pid", removeProductFromCart);
+cartsRoute.delete("/:cid/product/:pid", removeProductFromCart);
 
 cartsRoute.post("/", createCart);
 

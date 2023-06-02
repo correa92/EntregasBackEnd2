@@ -8,10 +8,19 @@ const UserSchema = new Schema({
   lastName: { type: Schema.Types.String },
   email: { type: Schema.Types.String, unique: true, required: true },
   age: { type: Schema.Types.Number, default: 18 },
-  password: { type: Schema.Types.String },
-  rol: { type: Schema.Types.String, default: "user"}
+  password: { type: Schema.Types.String, required: true },
+  cart: {type: Schema.Types.ObjectId},
+  role: { type: Schema.Types.String, default:"client"}
 });
 
 UserSchema.plugin(paginate);
+
+UserSchema.pre('find', function () {
+  this.populate(['role']);
+});
+
+UserSchema.pre('findOne', function () {
+  this.populate(['role']);
+});
 
 export default mongoose.model(userCollection, UserSchema);

@@ -1,6 +1,6 @@
 import CartManager from "../managers/CartsManager.js";
 
-export const findOne = async (req, res) => {
+export const findOne = async (req, res, next) => {
   try {
     const classCM = new CartManager();
     let cid = req.params.cid;
@@ -12,12 +12,12 @@ export const findOne = async (req, res) => {
       message: "Cart obtained successfully",
       data: cart,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const createCart = async (req, res) => {
+export const createCart = async (req, res, next) => {
   try {
     const classCM = new CartManager();
     const addProduct = await classCM.create(req.body);
@@ -27,12 +27,12 @@ export const createCart = async (req, res) => {
       message: "Cart created successfully",
       data: addProduct,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "Error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const updateCart = async (req, res) => {
+export const updateCart = async (req, res, next) => {
   try {
     const classCM = new CartManager();
 
@@ -44,21 +44,17 @@ export const updateCart = async (req, res) => {
       return res.status(400).json({
         status: "error",
         message: Error,
-        Error: error,
+        error: Error,
       });
     }
 
     return res.status(201).json({ status: "success", data: response });
-  } catch (error) {
-    return res.status(400).json({
-      status: "error",
-      message: "Could not add product to cart",
-      Error: error,
-    });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const removeProductFromCart = async (req, res) => {
+export const removeProductFromCart = async (req, res, next) => {
   try {
     const classCM = new CartManager();
 
@@ -71,12 +67,12 @@ export const removeProductFromCart = async (req, res) => {
       message: "Product successfully removed",
       data: cart,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const removeAllProductsFromCart = async (req, res) => {
+export const removeAllProductsFromCart = async (req, res, next) => {
   try {
     const classCM = new CartManager();
 
@@ -89,12 +85,12 @@ export const removeAllProductsFromCart = async (req, res) => {
       message: "All products successfully removed",
       data: cart,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const addListProducts = async (req, res) => {
+export const addListProducts = async (req, res, next) => {
   try {
     const classCM = new CartManager();
 
@@ -108,12 +104,12 @@ export const addListProducts = async (req, res) => {
       message: "Product list added successfully ",
       data: cart,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const updateQuantity = async (req, res) => {
+export const updateQuantity = async (req, res, next) => {
   try {
     const classCM = new CartManager();
 
@@ -131,11 +127,7 @@ export const updateQuantity = async (req, res) => {
     }
 
     return res.status(201).json({ status: "success", data: response });
-  } catch (error) {
-    return res.status(400).json({
-      status: "error",
-      message: "Could not add product to cart",
-      Error: error,
-    });
+  } catch (e) {
+    next(e);
   }
 };

@@ -48,7 +48,6 @@ class ProductMongooseDao {
 
   async findOne(id) {
     const productDocument = await productSchema.findOne({ _id: id });
-
     return {
       title: productDocument?.title,
       description: productDocument?.description,
