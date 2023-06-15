@@ -1,8 +1,9 @@
-import UserManager from "../managers/userManager.js";
+import UserManager from "../../domain/managers/userManager.js";
 
 export const list = async  (req, res) =>
 {
     const { limit, page } = req.query;
+    
     const manager = new UserManager();
 
     const users = await manager.paginate({ limit, page });

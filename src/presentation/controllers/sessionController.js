@@ -1,4 +1,4 @@
-import SessionManager from "../managers/sessionManager.js";
+import SessionManager from "../../domain/managers/sessionManager.js";
 
 export const login = async (req, res, next) => {
   try {
@@ -6,6 +6,8 @@ export const login = async (req, res, next) => {
 
     const manager = new SessionManager();
     const accessToken = await manager.login(email, password);
+
+    req.session.user = { email };
 
     res
       .cookie("accessToken", accessToken, {
@@ -19,7 +21,6 @@ export const login = async (req, res, next) => {
       });
   } catch (e) {
     next(e);
-    0;
   }
 };
 
@@ -45,6 +46,16 @@ export const signup = async (req, res, next) => {
   } catch (e) {
     next(e);
   }
+};
+export const logout = async (req, res) => {
+
+  req.session.destroy((err) => {
+    if (!err) {
+      return res.send({ message: "Logout ok!" });
+    }
+
+    res.send({ message: "Logout error!", body: err });
+  });
 };
 
 export const forgetPassword = async (req, res, next) => {

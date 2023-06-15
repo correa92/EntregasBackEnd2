@@ -53,7 +53,10 @@ class UserMongooseDao {
 
   async create(data) {
     const userDocument = await userSchema.create(data);
-   
+    
+    if (!userDocument) {
+      throw new Error('Could not create document')
+    }
     return {
       id: userDocument._id,
       firstName: userDocument.firstName,

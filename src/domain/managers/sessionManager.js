@@ -1,10 +1,10 @@
-import CartMongooseDao from "../dao/CartMongooseDao.js";
-import UserMongooseDao from "../dao/UserMongooseDao.js";
+import CartMongooseDao from "../../data/dao/CartMongooseDao.js";
+import UserMongooseDao from "../../data/dao/UserMongooseDao.js";
 import {
   createHash,
   generateToken,
   isValidPassword,
-} from "../shared/shared.js";
+} from "../../shared/shared.js";
 import loginValidation from "../validations/session/loginValidation.js";
 import userCreateValidation from "../validations/user/userCreateValidation.js";
 
@@ -48,10 +48,6 @@ class SessionManager {
     await loginValidation.parseAsync({ email, password });
 
     const user = await this.userDao.getOneByEmail(email);
-
-    if (!user) {
-      throw new Error("don't exist user ");
-    }
 
     const dto = {
       ...user,
