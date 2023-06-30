@@ -6,6 +6,7 @@ import MongoStore from "connect-mongo";
 import sessionRouter from "../routers/sessionRoute.js";
 import userRouter from "../routers/userRoute.js";
 import roleRouter from "../routers/roleRouter.js";
+import mailRouter from "../routers/mailRoute.js";
 import productsRoute from "../../presentation/routers/productsRoute.js"
 import cartsRoute from "../../presentation/routers/cartsRoute.js"
 import errorHandler from "../middleware/errorHandler.js";
@@ -37,6 +38,7 @@ class AppExpress {
     this.app.use("/api/roles", roleRouter);
     this.app.use("/api/products", productsRoute);
     this.app.use("/api/carts", cartsRoute);
+    this.app.use("/api/mail", mailRouter)
     this.app.use(errorHandler);
   }
 
