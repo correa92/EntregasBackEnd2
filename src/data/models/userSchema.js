@@ -9,18 +9,19 @@ const UserSchema = new Schema({
   email: { type: Schema.Types.String, unique: true, required: true },
   age: { type: Schema.Types.Number, default: 18 },
   password: { type: Schema.Types.String, required: true },
-  cart: {type: Schema.Types.ObjectId},
-  role: { type: Schema.Types.String, default:"client"}
+  cart: { type: Schema.Types.ObjectId },
+  isAdmin: { type: Schema.Types.Boolean, default: false },
+  role: { type: Schema.Types.ObjectId, index: true, ref: "roles" },
 });
 
 UserSchema.plugin(paginate);
 
-UserSchema.pre('find', function () {
-  this.populate(['role']);
+UserSchema.pre("find", function () {
+  this.populate(["role"]);
 });
 
-UserSchema.pre('findOne', function () {
-  this.populate(['role']);
+UserSchema.pre("findOne", function () {
+  this.populate(["role"]);
 });
 
 export default mongoose.model(userCollection, UserSchema);

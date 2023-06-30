@@ -14,6 +14,32 @@ class RoleMongooseDao {
     return roleDocuments;
   }
 
+  async findOne(filter) {
+    return await roleSchema.findOne(filter);
+  }
+
+  async addPermissions(id, permission) {
+    let roleDocument = await roleSchema.findOne({
+      _id: id,
+    });
+
+    if (roleDocument.permissions.includes(permission)) {
+      throw new Error("the permission already exists");
+    } else {
+      roleDocument = await roleSchema.findOneAndUpdate(
+        { _id: id },
+        { $push: { permissions: permission } },
+        { new: true }
+      );
+    }
+
+    return {
+      id: roleDocument._id,
+      name: roleDocument.name,
+      permissions: roleDocument.permissions,
+    };
+  }
+
   async getOne(id) {
     const roleDocument = await roleSchema.findOne({ _id: id });
 

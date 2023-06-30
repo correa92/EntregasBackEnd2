@@ -6,18 +6,20 @@ import {
   update,
   addProduct,
 } from "../controllers/productsController.js";
+import auth from "../middleware/auth.js";
+import authorization from "../middleware/authorization.js";
 
 
 const productsRoute = Router();
 
 productsRoute.get("/", get);
 
-productsRoute.get("/:pid", findOne);
+productsRoute.get("/:pid",auth, authorization("productsAdmin"), findOne);
 
-productsRoute.post("/", addProduct);
+productsRoute.post("/",auth, authorization("productsAdmin"), addProduct);
 
-productsRoute.put("/:pid", update);
+productsRoute.put("/:pid",auth, authorization("productsAdmin"), update);
 
-productsRoute.delete("/:pid", deleteOne);
+productsRoute.delete("/:pid",auth, authorization("productsAdmin"), deleteOne);
 
 export default productsRoute;

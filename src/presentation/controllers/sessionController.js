@@ -5,6 +5,7 @@ export const login = async (req, res, next) => {
     const { email, password } = req.body;
 
     const manager = new SessionManager();
+
     const accessToken = await manager.login(email, password);
 
     req.session.user = { email };
@@ -12,7 +13,7 @@ export const login = async (req, res, next) => {
     res
       .cookie("accessToken", accessToken, {
         maxAge: 60 * 60 * 1000,
-        httpOnly: true
+        httpOnly: true,
       })
       .send({
         status: "success",
@@ -32,10 +33,10 @@ export const current = async (req, res, next) => {
   }
 };
 
-
 export const signup = async (req, res, next) => {
   try {
     req.body.age = parseInt(req.body.age);
+    req.body.isAdmin = Boolean(req.body.isAdmin);
 
     const manager = new SessionManager();
     const user = await manager.signup(req.body);
@@ -48,7 +49,6 @@ export const signup = async (req, res, next) => {
   }
 };
 export const logout = async (req, res) => {
-
   req.session.destroy((err) => {
     if (!err) {
       return res.send({ message: "Logout ok!" });

@@ -3,6 +3,7 @@ import userSchema from "../models/userSchema.js";
 class UserMongooseDao {
   async paginate(criteria) {
     const { limit, page } = criteria;
+    
     const userDocuments = await userSchema.paginate({}, { limit, page });
 
     userDocuments.docs = userDocuments.docs.map((document) => ({
@@ -29,17 +30,13 @@ class UserMongooseDao {
       lastName: userDocument?.lastName,
       email: userDocument?.email,
       age: userDocument?.age,
-      password: userDocument?.password,
+      // password: userDocument?.password,
     };
   }
 
   async getOneByEmail(email) {
     
     const userDocument = await userSchema.findOne({ email });
-
-    if (!userDocument) {
-      throw new Error('Email dont exist')
-    }
 
     return {
       id: userDocument?._id,
@@ -48,6 +45,8 @@ class UserMongooseDao {
       email: userDocument?.email,
       age: userDocument?.age,
       password: userDocument?.password,
+      isAdmin : userDocument?.isAdmin,
+      role : userDocument?.role
     };
   }
 
@@ -57,6 +56,7 @@ class UserMongooseDao {
     if (!userDocument) {
       throw new Error('Could not create document')
     }
+    
     return {
       id: userDocument._id,
       firstName: userDocument.firstName,
@@ -64,7 +64,9 @@ class UserMongooseDao {
       email: userDocument.email,
       age: userDocument.age,
       password: userDocument.password,
-      cart: userDocument.cart
+      cart: userDocument.cart,
+      isAdmin : userDocument.isAdmin,
+      roles : userDocument.role
     };
   }
 
@@ -83,6 +85,9 @@ class UserMongooseDao {
       lastName: userDocument.lastName,
       email: userDocument.email,
       age: userDocument.age,
+      cart: userDocument.cart,
+      isAdmin: userDocument.isAdmin,
+      roles: userDocument.role
     };
   }
 

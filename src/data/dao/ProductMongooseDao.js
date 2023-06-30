@@ -45,6 +45,49 @@ class ProductMongooseDao {
           : productDocument.hasNextPage,
     };
   }
+  async deleteOfCar(id){
+    const productDocument = await productSchema.findOneAndUpdate(
+      { _id: id },
+      { $pull: {products: id}  },
+      { new: true }
+    );
+    if (!productDocument) {
+      throw new Error("The product does not exist");
+    }
+    return {
+      title: productDocument?.title,
+      description: productDocument?.description,
+      price: productDocument?.price,
+      thumbnail: productDocument?.thumbnail,
+      code: productDocument?.code,
+      stock: productDocument?.stock,
+      category: productDocument?.category,
+      status: productDocument?.status,
+      id: productDocument?.id,
+    };
+  }
+  async updateStock(id, stock) {
+    const productDocument = await productSchema.findOneAndUpdate(
+      { _id: id },
+      { $inc: { stock } },
+      { new: true }
+    );
+
+    if (!productDocument) {
+      throw new Error("The product does not exist");
+    }
+    return {
+      title: productDocument?.title,
+      description: productDocument?.description,
+      price: productDocument?.price,
+      thumbnail: productDocument?.thumbnail,
+      code: productDocument?.code,
+      stock: productDocument?.stock,
+      category: productDocument?.category,
+      status: productDocument?.status,
+      id: productDocument?.id,
+    };
+  }
 
   async findOne(id) {
     const productDocument = await productSchema.findOne({ _id: id });

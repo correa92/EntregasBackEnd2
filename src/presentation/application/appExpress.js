@@ -21,7 +21,7 @@ class AppExpress {
       session({
         store: MongoStore.create({
           mongoUrl: process.env.MONGO_DB_URI,
-          ttl: 60, //h/m/s 24*60*60
+          ttl: 60*60, //h/m/s 24*60*60
         }),
         secret: "passwordSecret",
         resave: false,

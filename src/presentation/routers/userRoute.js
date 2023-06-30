@@ -1,5 +1,6 @@
 import { Router } from "express";
 import auth from "../middleware/auth.js";
+import authorization from "../middleware/authorization.js";
 import {
   list,
   deleteOne,
@@ -10,10 +11,10 @@ import {
 
 const userRouter = Router();
 
-userRouter.get("/", list);
-userRouter.get("/:id", getOne);
-userRouter.post("/", auth, save);
-userRouter.put("/:id", update);
-userRouter.delete("/:id", deleteOne);
+userRouter.get('/', auth, authorization('getUsers'), list);
+userRouter.get('/:id', auth, authorization('getUser'), getOne);
+userRouter.post('/', auth, authorization('saveUser'), save);
+userRouter.put('/:id', auth, authorization('updateUser'), update);
+userRouter.delete('/:id', auth, authorization('deleteUser'), deleteOne);
 
 export default userRouter;

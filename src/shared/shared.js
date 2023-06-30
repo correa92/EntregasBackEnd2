@@ -13,7 +13,7 @@ export const generateToken = async (user) => {
   const token = jwt.sign(
     { user: { ...user, password: undefined } },
     process.env.PRIVATE_KEY,
-    { expiresIn: "10m" }
+    { expiresIn: "1h" }
   );
   return token;
 };

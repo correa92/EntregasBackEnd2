@@ -17,6 +17,24 @@ export const findOne = async (req, res, next) => {
   }
 };
 
+export const buyCar = async (req, res, next) => {
+  try {
+    const classCM = new CartManager();
+    let cid = req.params.cid;
+
+    const cart = await classCM.buyCar(cid);
+
+
+    return res.status(200).json({
+      status: "success",
+      message: "Cart obtained successfully",
+      data: cart,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 export const createCart = async (req, res, next) => {
   try {
     const classCM = new CartManager();

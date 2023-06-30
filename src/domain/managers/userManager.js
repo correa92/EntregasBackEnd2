@@ -19,7 +19,7 @@ class UserManager {
 
   async create(data) {
     const userExist = await this.getOneByEmail(data.email);
-
+    
     if (userExist.id === undefined) {
       return await this.userDao.create(data);
     }

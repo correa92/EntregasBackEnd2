@@ -15,6 +15,34 @@ class CartManager {
     return await this.cartDao.create(data);
   }
 
+  async buyCar(id) {
+    const cart = await this.cartDao.getCart(id);
+
+    if (cart.id === undefined) {
+      return { Error: "Cart id not found" };
+    }
+
+    let productsInStock = [];
+    let productsOutOfStock = [];
+
+    for (const e of cart.products) {
+      const product = await this.productDao.findOne(e.idProduct._id);
+
+      if (e.quantity <= product.stock) {
+        productsInStock.push(product);
+      } else {
+        productsOutOfStock.push(product);
+      }
+    }
+    
+    for (const e of productsInStock) {
+      await this.productDao.updateStock(e.id,e.stock);
+    }
+
+
+    return productsInStock;
+  }
+
   async addToCart(cid, pid) {
     try {
       const cart = await this.cartDao.getCart(cid);
@@ -22,7 +50,7 @@ class CartManager {
       if (cart.id === undefined) {
         return { Error: "Cart id not found" };
       }
-      
+
       if (product.Error) {
         return { Error: "Product id not found" };
       }
@@ -40,7 +68,6 @@ class CartManager {
       }
 
       return this.cartDao.updateCart(cid, cart);
-
     } catch (error) {
       return { Error: error.message };
     }
@@ -68,6 +95,5 @@ class CartManager {
 
     return this.cartDao.updateCart(cid, cart);
   }
-
 }
 export default CartManager;
