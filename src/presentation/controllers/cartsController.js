@@ -22,8 +22,7 @@ export const buyCar = async (req, res, next) => {
     const classCM = new CartManager();
     let cid = req.params.cid;
 
-    const cart = await classCM.buyCar(cid);
-
+    const cart = await classCM.buyCar(cid, req.user.email);
 
     return res.status(200).json({
       status: "success",

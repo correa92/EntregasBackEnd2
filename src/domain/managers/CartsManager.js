@@ -1,10 +1,12 @@
+import { v4 } from "uuid";
 import CartMongooseDao from "../../data/dao/CartMongooseDao.js";
 import ProductMongooseDao from "../../data/dao/ProductMongooseDao.js";
-
+import TicketMongooseDao from "../../data/dao/TicketMongooseDao.js";
 class CartManager {
   constructor() {
     this.cartDao = new CartMongooseDao();
     this.productDao = new ProductMongooseDao();
+    this.ticketDao = new TicketMongooseDao();
   }
 
   async getOne(id) {
@@ -15,32 +17,29 @@ class CartManager {
     return await this.cartDao.create(data);
   }
 
-  async buyCar(id) {
-    const cart = await this.cartDao.getCart(id);
+  async buyCar(id, email) {
+    let cart = await this.cartDao.getCart(id);
 
     if (cart.id === undefined) {
       return { Error: "Cart id not found" };
     }
 
-    let productsInStock = [];
-    let productsOutOfStock = [];
-
+    let total = 0;
     for (const e of cart.products) {
       const product = await this.productDao.findOne(e.idProduct._id);
 
       if (e.quantity <= product.stock) {
-        productsInStock.push(product);
-      } else {
-        productsOutOfStock.push(product);
+        total += product.price * e.quantity;
+        await this.productDao.updateStock(e.idProduct._id, e.quantity);
+        await this.cartDao.deleteOfCart(cart.id, e.idProduct._id);
       }
     }
-    
-    for (const e of productsInStock) {
-      await this.productDao.updateStock(e.id,e.stock);
-    }
-
-
-    return productsInStock;
+    const ticket = {
+      code: v4(),
+      amount: total,
+      purchase: email,
+    };
+    return await this.ticketDao.createTicket(ticket);
   }
 
   async addToCart(cid, pid) {

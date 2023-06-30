@@ -45,10 +45,10 @@ class ProductMongooseDao {
           : productDocument.hasNextPage,
     };
   }
-  async deleteOfCar(id){
+  async deleteOfCar(id) {
     const productDocument = await productSchema.findOneAndUpdate(
       { _id: id },
-      { $pull: {products: id}  },
+      { $pull: { products: { idProduct: id } } },
       { new: true }
     );
     if (!productDocument) {
@@ -66,10 +66,11 @@ class ProductMongooseDao {
       id: productDocument?.id,
     };
   }
-  async updateStock(id, stock) {
+  async updateStock( idProduct, stock) {
+
     const productDocument = await productSchema.findOneAndUpdate(
-      { _id: id },
-      { $inc: { stock } },
+      { _id: idProduct },
+      { $inc: { stock: -stock } },
       { new: true }
     );
 
@@ -91,6 +92,7 @@ class ProductMongooseDao {
 
   async findOne(id) {
     const productDocument = await productSchema.findOne({ _id: id });
+
     return {
       title: productDocument?.title,
       description: productDocument?.description,
@@ -101,6 +103,7 @@ class ProductMongooseDao {
       category: productDocument?.category,
       status: productDocument?.status,
       id: productDocument?.id,
+      _id: productDocument?._id.toString(),
     };
   }
 

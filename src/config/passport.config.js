@@ -18,7 +18,7 @@ const github = new GithubStrategy(
 
   async (accessToken, refreshToken, profile, done) => {
     try {
-      console.log(profile);
+  
 
       const manager = new classUM();
       let user = await manager.getOneByEmail(profile._json.email);
