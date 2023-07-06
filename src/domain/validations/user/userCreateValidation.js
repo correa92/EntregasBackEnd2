@@ -7,7 +7,7 @@ const userCreateValidation = z.object({
   age: z.number(),
   password: z.string(),
   isAdmin: z.boolean(),
-  roles: z.string()
+  role: z.string()
 });
 
 export default userCreateValidation;

@@ -1,24 +1,24 @@
 import { v4 } from "uuid";
-import CartMongooseDao from "../../data/dao/CartMongooseDao.js";
-import ProductMongooseDao from "../../data/dao/ProductMongooseDao.js";
-import TicketMongooseDao from "../../data/dao/TicketMongooseDao.js";
+import CartMongooseRepository from "../../data/repositories/mongoose/CartMongooseRepository.js";
+import ProductMongooseRepository from "../../data/repositories/mongoose/ProductMongooseRepository.js";
+import TicketMongooseRepository from "../../data/repositories/mongoose/TicketMongooseRepository.js";
 class CartManager {
   constructor() {
-    this.cartDao = new CartMongooseDao();
-    this.productDao = new ProductMongooseDao();
-    this.ticketDao = new TicketMongooseDao();
+    this.cartRepository = new CartMongooseRepository();
+    this.productRepository = new ProductMongooseRepository();
+    this.ticketRepository = new TicketMongooseRepository();
   }
 
   async getOne(id) {
-    return this.cartDao.getOne(id);
+    return this.cartRepository.getOne(id);
   }
 
   async create(data) {
-    return await this.cartDao.create(data);
+    return await this.cartRepository.create(data);
   }
 
   async buyCar(id, email) {
-    let cart = await this.cartDao.getCart(id);
+    let cart = await this.cartRepository.getCart(id);
 
     if (cart.id === undefined) {
       return { Error: "Cart id not found" };
@@ -26,12 +26,12 @@ class CartManager {
 
     let total = 0;
     for (const e of cart.products) {
-      const product = await this.productDao.findOne(e.idProduct._id);
+      const product = await this.productRepository.findOne(e.idProduct._id);
 
       if (e.quantity <= product.stock) {
         total += product.price * e.quantity;
-        await this.productDao.updateStock(e.idProduct._id, e.quantity);
-        await this.cartDao.deleteOfCart(cart.id, e.idProduct._id);
+        await this.productRepository.updateStock(e.idProduct._id, e.quantity);
+        await this.cartRepository.deleteOfCart(cart.id, e.idProduct._id);
       }
     }
     const ticket = {
@@ -39,13 +39,13 @@ class CartManager {
       amount: total,
       purchase: email,
     };
-    return await this.ticketDao.createTicket(ticket);
+    return await this.ticketRepository.createTicket(ticket);
   }
 
   async addToCart(cid, pid) {
     try {
-      const cart = await this.cartDao.getCart(cid);
-      const product = await this.productDao.findOne(pid);
+      const cart = await this.cartRepository.getCart(cid);
+      const product = await this.productRepository.findOne(pid);
       if (cart.id === undefined) {
         return { Error: "Cart id not found" };
       }
@@ -66,33 +66,33 @@ class CartManager {
         cart.products.push({ idProduct: pid, quantity: 1 });
       }
 
-      return this.cartDao.updateCart(cid, cart);
+      return this.cartRepository.updateCart(cid, cart);
     } catch (error) {
       return { Error: error.message };
     }
   }
 
   async removeProductFromCart(cid, pid) {
-    const cart = await this.cartDao.getCart(cid);
+    const cart = await this.cartRepository.getCart(cid);
     const newListProducts = cart.products.filter(
       (prod) => prod.idProduct.toString() !== pid
     );
 
     cart.products = newListProducts;
 
-    return this.cartDao.updateCart(cid, cart);
+    return this.cartRepository.updateCart(cid, cart);
   }
 
   async removeAllProductFromCart(cid) {
-    return this.cartDao.updateCart(cid, { products: [] });
+    return this.cartRepository.updateCart(cid, { products: [] });
   }
 
   async addListProducts(cid, data) {
-    const cart = await this.cartDao.getOne(cid);
+    const cart = await this.cartRepository.getOne(cid);
 
     cart.products = data;
 
-    return this.cartDao.updateCart(cid, cart);
+    return this.cartRepository.updateCart(cid, cart);
   }
 }
 export default CartManager;

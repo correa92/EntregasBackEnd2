@@ -23,5 +23,4 @@ cartsRoute.put("/:cid",auth, authorization("addProductToCar"), addListProducts);
 cartsRoute.post("/:cid/product/:pid",auth, authorization("updateCar"), updateCart);
 cartsRoute.put("/:cid/product/:pid",auth, authorization("updateQuantity"), updateQuantity);
 
-
 export default cartsRoute;

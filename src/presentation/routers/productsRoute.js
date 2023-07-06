@@ -14,7 +14,7 @@ const productsRoute = Router();
 
 productsRoute.get("/", get);
 
-productsRoute.get("/:pid",auth, authorization("productsAdmin"), findOne);
+productsRoute.get("/:pid", findOne);
 
 productsRoute.post("/",auth, authorization("productsAdmin"), addProduct);
 

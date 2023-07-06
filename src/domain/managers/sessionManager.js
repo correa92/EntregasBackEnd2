@@ -1,6 +1,6 @@
-import CartMongooseDao from "../../data/dao/CartMongooseDao.js";
-import UserMongooseDao from "../../data/dao/UserMongooseDao.js";
-import RoleMongooseDao from "../../data/dao/roleMongooseDao.js";
+import CartMongooseRepository from "../../data/repositories/mongoose/CartMongooseRepository.js";
+import UserMongooseRepository from "../../data/repositories/mongoose/UserMongooseRepository.js";
+import RoleMongooseRepository from "../../data/repositories/mongoose/RoleMongooseRepository.js";
 import {
   createHash,
   generateToken,
@@ -11,16 +11,19 @@ import userCreateValidation from "../validations/user/userCreateValidation.js";
 
 class SessionManager {
   constructor() {
-    this.userDao = new UserMongooseDao();
-    this.cartDao = new CartMongooseDao();
-    this.roleDao = new RoleMongooseDao();
+    this.userRepository = new UserMongooseRepository();
+    this.cartRepository = new CartMongooseRepository();
+    this.roleRepository = new RoleMongooseRepository();
   }
 
   async login(email, password) {
     await loginValidation.parseAsync({ email, password });
 
-    const user = await this.userDao.getOneByEmail(email);
-
+    const user = await this.userRepository.getOneByEmail(email);
+    
+    if (!user) {
+      throw new Error(`No account found with ${email}`);
+    }
 
     const isHashedPassword = isValidPassword(password, user.password);
 
@@ -32,16 +35,17 @@ class SessionManager {
   }
 
   async signup(payload) {
+
     await userCreateValidation.parseAsync(payload);
     //a cart is created and linked to the user
-    const cart = await this.cartDao.create();
+    const cart = await this.cartRepository.create();
 
     let id_rol = undefined;
 
     if (payload.isAdmin) {
-      id_rol = await this.roleDao.findOne({ name: "admin" });
+      id_rol = await this.roleRepository.findOne({ name: "admin" });
     } else {
-      id_rol = await this.roleDao.findOne({ name: "client" });
+      id_rol = await this.roleRepository.findOne({ name: "client" });
     }
 
     if (!id_rol) {
@@ -55,7 +59,7 @@ class SessionManager {
       role: id_rol._id.toString(),
     };
     
-    const user = await this.userDao.create(dto);
+    const user = await this.userRepository.create(dto);
 
     return { ...user, password: undefined };
   }
@@ -63,14 +67,14 @@ class SessionManager {
   async forgetPassword(email, password) {
     await loginValidation.parseAsync({ email, password });
 
-    const user = await this.userDao.getOneByEmail(email);
+    const user = await this.userRepository.getOneByEmail(email);
 
     const dto = {
       ...user,
       password: createHash(password, 10),
     };
 
-    return await this.userDao.updateOne(user.id, dto);
+    return await this.userRepository.updateOne(user.id, dto);
   }
 }
 

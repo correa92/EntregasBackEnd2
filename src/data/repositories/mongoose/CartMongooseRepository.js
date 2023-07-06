@@ -1,24 +1,25 @@
-import cartSchema from "../models/cartSchema.js";
+import cartSchema from "../../models/mongoose/cartSchema.js";
+import Cart from "../../../domain/entities/Cart.js";
 
-class CartMongooseDao {
+class CartMongooseRepository {
   async getOne(id) {
     const cartDocument = await cartSchema
       .findOne({ _id: id })
       .populate(["products.idProduct"]);
 
-    return {
+    return new Cart({
       id: cartDocument?._id,
       products: cartDocument?.products,
-    };
+    });
   }
 
   async getCart(id) {
     const cartDocument = await cartSchema.findOne({ _id: id });
 
-    return {
+    return new Cart({
       id: cartDocument?._id,
       products: cartDocument?.products,
-    };
+    });
   }
 
   async create() {
@@ -27,10 +28,10 @@ class CartMongooseDao {
     if (!cartDocument) {
       throw new Error("Could not create cart");
     }
-    return {
+    return new Cart({
       id: cartDocument._id,
       products: cartDocument.products,
-    };
+    });
   }
 
   async deleteOfCart(id, data) {
@@ -41,25 +42,31 @@ class CartMongooseDao {
         new: true,
       }
     );
-    return {
+
+    const document = cartDocument.products.map((cart) => {
+      return { idProduct: cart.idProduct, quantity: cart.quantity };
+    });
+
+    return new Cart({
       id: cartDocument._id,
-      products: cartDocument.products.map((cart) => {
-        return { idProduct: cart.idProduct, quantity: cart.quantity };
-      }),
-    };
+      products: document,
+    });
   }
 
   async updateCart(id, data) {
     const cartDocument = await cartSchema.findOneAndUpdate({ _id: id }, data, {
       new: true,
     });
-    return {
+
+    const document = cartDocument.products.map((cart) => {
+      return { idProduct: cart.idProduct, quantity: cart.quantity };
+    });
+
+    return new Cart({
       id: cartDocument._id,
-      products: cartDocument.products.map((cart) => {
-        return { idProduct: cart.idProduct, quantity: cart.quantity };
-      }),
-    };
+      products: document,
+    });
   }
 }
 
-export default CartMongooseDao;
+export default CartMongooseRepository;

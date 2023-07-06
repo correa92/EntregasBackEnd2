@@ -48,14 +48,18 @@ export const signup = async (req, res, next) => {
     next(e);
   }
 };
-export const logout = async (req, res) => {
-  req.session.destroy((err) => {
-    if (!err) {
-      return res.send({ message: "Logout ok!" });
-    }
+export const logout = async (req, res, next) => {
+  try {
+    req.session.destroy((err) => {
+      if (!err) {
+        return res.send({ message: "Logout success!" });
+      }
 
-    res.send({ message: "Logout error!", body: err });
-  });
+      res.send({ message: "Logout error!", body: err });
+    });
+  } catch (e) {
+    next(e);
+  }
 };
 
 export const forgetPassword = async (req, res, next) => {

@@ -1,9 +1,8 @@
 import jwt from "jsonwebtoken";
 
 const auth = (req, res, next) => {
-
   const authHeader = req.headers.authorization;
-  
+
   if (!authHeader) {
     return res.status(401).send({ message: "Not authenticated" });
   }

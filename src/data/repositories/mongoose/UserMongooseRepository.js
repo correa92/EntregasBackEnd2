@@ -1,20 +1,35 @@
-import userSchema from "../models/userSchema.js";
+import userSchema from "../../models/mongoose/userSchema.js";
+import User from "../../../domain/entities/User.js";
+import Role from "../../../domain/entities/Role.js";
 
-class UserMongooseDao {
+class UserMongooseRepository {
   async paginate(criteria) {
-    const { limit, page } = criteria;
-    
+    const { limit = 5, page = 1 } = criteria;
+
+
     const userDocuments = await userSchema.paginate({}, { limit, page });
+    const { docs, ...pagination } = userDocuments;
 
-    userDocuments.docs = userDocuments.docs.map((document) => ({
-      id: document._id,
-      firstName: document.firstName,
-      lastName: document.lastName,
-      email: document.email,
-      age: document.age,
-    }));
+    const users = docs.map(
+      (document) =>
+        new User({
+          id: document._id,
+          firstName: document.firstName,
+          lastName: document.lastName,
+          email: document.email,
+          age: document.age,
+          isAdmin: document.isAdmin,
+          role: document.role
+            ? new Role(
+                document.role.id,
+                document.role.name,
+                document.role.permissions
+              )
+            : null,
+        })
+    );
 
-    return userDocuments;
+    return { users, pagination };
   }
 
   async getOne(id) {
@@ -24,40 +39,42 @@ class UserMongooseDao {
       throw new Error("User dont exist.");
     }
 
-    return {
-      id: userDocument?._id,
-      firstName: userDocument?.firstName,
-      lastName: userDocument?.lastName,
-      email: userDocument?.email,
-      age: userDocument?.age,
-      // password: userDocument?.password,
-    };
-  }
-
-  async getOneByEmail(email) {
-    
-    const userDocument = await userSchema.findOne({ email });
-
-    return {
+    return new User({
       id: userDocument?._id,
       firstName: userDocument?.firstName,
       lastName: userDocument?.lastName,
       email: userDocument?.email,
       age: userDocument?.age,
       password: userDocument?.password,
-      isAdmin : userDocument?.isAdmin,
-      role : userDocument?.role
-    };
+      isAdmin: userDocument.isAdmin,
+      role: userDocument.role,
+    });
+  }
+
+  async getOneByEmail(email) {
+
+    const userDocument = await userSchema.findOne({ email });
+
+    return new User({
+      id: userDocument?._id,
+      firstName: userDocument?.firstName,
+      lastName: userDocument?.lastName,
+      email: userDocument?.email,
+      age: userDocument?.age,
+      password: userDocument?.password,
+      isAdmin: userDocument?.isAdmin,
+      role: userDocument?.role,
+    });
   }
 
   async create(data) {
     const userDocument = await userSchema.create(data);
-    
+
     if (!userDocument) {
-      throw new Error('Could not create document')
+      throw new Error("Could not create document");
     }
-    
-    return {
+
+    return new User({
       id: userDocument._id,
       firstName: userDocument.firstName,
       lastName: userDocument.lastName,
@@ -65,9 +82,9 @@ class UserMongooseDao {
       age: userDocument.age,
       password: userDocument.password,
       cart: userDocument.cart,
-      isAdmin : userDocument.isAdmin,
-      roles : userDocument.role
-    };
+      isAdmin: userDocument.isAdmin,
+      roles: userDocument.role,
+    });
   }
 
   async updateOne(id, data) {
@@ -79,7 +96,7 @@ class UserMongooseDao {
       throw new Error("User dont exist.");
     }
 
-    return {
+    return new User({
       id: userDocument._id,
       firstName: userDocument.firstName,
       lastName: userDocument.lastName,
@@ -87,8 +104,7 @@ class UserMongooseDao {
       age: userDocument.age,
       cart: userDocument.cart,
       isAdmin: userDocument.isAdmin,
-      roles: userDocument.role
-    };
+    });
   }
 
   async deleteOne(id) {
@@ -96,4 +112,4 @@ class UserMongooseDao {
   }
 }
 
-export default UserMongooseDao;
+export default UserMongooseRepository;

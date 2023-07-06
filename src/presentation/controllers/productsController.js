@@ -1,9 +1,10 @@
+import { paginate } from "mongoose-paginate-v2";
 import ProductManager from "../../domain/managers/ProductsManager.js";
 
-export const get = async (req, res) => {
+export const get = async (req, res, next) => {
   try {
     const classPM = new ProductManager();
-
+    
     const { limit, page, category, status, sort } = req.query;
 
     if (status != undefined && status != "true" && status != "false") {
@@ -20,25 +21,26 @@ export const get = async (req, res) => {
 
     const products = await classPM.find(limit, page, category, status, sort);
 
+
     return res.json({
       status: "success",
       message: "Products obtained successfully",
-      payload: products.docs,
-      totalPages: products.totalPages,
-      prevPage: products.prevPage,
-      nextPage: products.nextPage,
-      page: products.page,
-      hasPrevPage: products.hasPrevPage,
-      hasNextPage: products.hasNextPage,
-      prevLink: products.prevLink,
-      nextLink: products.nextLink,
+      payload: products,
+      totalPages: paginate.totalPages,
+      prevPage: paginate.prevPage,
+      nextPage: paginate.nextPage,
+      page: paginate.page,
+      hasPrevPage: paginate.hasPrevPage,
+      hasNextPage: paginate.hasNextPage,
+      prevLink: paginate.prevLink,
+      nextLink: paginate.nextLink,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "Error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const findOne = async (req, res) => {
+export const findOne = async (req, res, next) => {
   try {
     const classPM = new ProductManager();
     let pid = req.params.pid;
@@ -49,12 +51,12 @@ export const findOne = async (req, res) => {
       message: "Product obtained successfully",
       data: product,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "Error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const addProduct = async (req, res) => {
+export const addProduct = async (req, res, next) => {
   try {
     const classPM = new ProductManager();
     const addProduct = await classPM.create(req.body);
@@ -64,12 +66,12 @@ export const addProduct = async (req, res) => {
       message: "Product created successfully",
       data: addProduct,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "Error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const update = async (req, res) => {
+export const update = async (req, res, next) => {
   try {
     const classPM = new ProductManager();
     const idProduct = req.params.pid;
@@ -84,12 +86,12 @@ export const update = async (req, res) => {
       message: "Product updated successfully",
       data: updateProduct,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "Error", Error: error });
+  } catch (e) {
+    next(e);
   }
 };
 
-export const deleteOne = async (req, res) => {
+export const deleteOne = async (req, res, next) => {
   try {
     const classPM = new ProductManager();
     const id = req.params.pid;
@@ -101,6 +103,6 @@ export const deleteOne = async (req, res) => {
       data: deleteProduct,
     });
   } catch (error) {
-    return res.status(400).json({ status: "Error", Error: error });
+    next(e);
   }
 };

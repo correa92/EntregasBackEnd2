@@ -1,17 +1,21 @@
-import roleSchema from "../models/roleSchema.js";
-
-class RoleMongooseDao {
+import roleSchema from "../../models/mongoose/roleSchema.js";
+import Role from "../../../domain/entities/Role.js";
+class RoleMongooseRepository {
   async paginate(criteria) {
     const { limit, page } = criteria;
     const roleDocuments = await roleSchema.paginate({}, { limit, page });
+    const { docs, ...pagination } = roleDocuments;
 
-    roleDocuments.docs = roleDocuments.docs.map((document) => ({
-      id: document._id,
-      name: document.name,
-      permissions: document.permissions,
-    }));
+    const roles = docs.map(
+      (document) =>
+        new Role({
+          id: document._id,
+          name: document.name,
+          permissions: document.permissions,
+        })
+    );
 
-    return roleDocuments;
+    return { roles, pagination };
   }
 
   async findOne(filter) {
@@ -33,11 +37,11 @@ class RoleMongooseDao {
       );
     }
 
-    return {
+    return new Role({
       id: roleDocument._id,
       name: roleDocument.name,
       permissions: roleDocument.permissions,
-    };
+    });
   }
 
   async getOne(id) {
@@ -47,21 +51,21 @@ class RoleMongooseDao {
       throw new Error("Role dont exist.");
     }
 
-    return {
-      id: roleDocument?._id,
-      name: roleDocument?.name,
-      permissions: roleDocument?.permissions,
-    };
+    return new Role({
+      id: roleDocument._id,
+      name: roleDocument.name,
+      permissions: roleDocument.permissions,
+    });
   }
 
   async create(data) {
     const roleDocument = await roleSchema.create(data);
 
-    return {
+    return new Role({
       id: roleDocument._id,
       name: roleDocument.name,
       permissions: roleDocument.permissions,
-    };
+    });
   }
 
   async updateOne(id, data) {
@@ -73,11 +77,11 @@ class RoleMongooseDao {
       throw new Error("Role dont exist.");
     }
 
-    return {
+    return new Role({
       id: roleDocument._id,
       name: roleDocument.name,
       permissions: roleDocument.permissions,
-    };
+    });
   }
 
   async deleteOne(id) {
@@ -85,4 +89,4 @@ class RoleMongooseDao {
   }
 }
 
-export default RoleMongooseDao;
+export default RoleMongooseRepository;
