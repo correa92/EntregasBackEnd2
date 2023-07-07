@@ -41,6 +41,15 @@ class AppExpress {
     this.app.use("/api/mail", mailRouter);
     this.app.use(errorHandler);
   }
+  callback()
+  {
+      return this.app;
+  }
+
+  close()
+  {
+      this.server.close();
+  }
 
   listen() {
     return this.app.listen(process.env.SERVER_PORT || 8080, () => {

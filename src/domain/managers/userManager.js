@@ -19,12 +19,12 @@ class UserManager {
 
   async create(data) {
     const userExist = await this.getOneByEmail(data.email);
-    
+
     if (userExist.id === undefined) {
       return await this.userRepository.create(data);
     }
 
-    return { id: undefined, password: undefined };
+    return { password: undefined };
   }
 
   async updateOne(id, data) {

@@ -6,7 +6,6 @@ class UserMongooseRepository {
   async paginate(criteria) {
     const { limit = 5, page = 1 } = criteria;
 
-
     const userDocuments = await userSchema.paginate({}, { limit, page });
     const { docs, ...pagination } = userDocuments;
 
@@ -52,7 +51,6 @@ class UserMongooseRepository {
   }
 
   async getOneByEmail(email) {
-
     const userDocument = await userSchema.findOne({ email });
 
     return new User({
@@ -108,7 +106,7 @@ class UserMongooseRepository {
   }
 
   async deleteOne(id) {
-    return userSchema.deleteOne({ _id: id });
+    return await userSchema.deleteOne({ _id: id });
   }
 }
 

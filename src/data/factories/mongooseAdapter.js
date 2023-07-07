@@ -2,14 +2,26 @@ import mongoose from "mongoose";
 
 class MongooseAdapter {
   async init(uri) {
-    this.connection = await mongoose.connect(uri, {
+    return (this.connection = await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    });
+    }));
   }
 
   async close() {
-    await this.connection.disconnect();
+    const conection = await this.connection.disconnect();
+    if (!conection) {
+      throw new Error("Could not close the connection");
+    }
+    return conection;
+  }
+
+  async drop() {
+    const conection = await this.connection.dropDatabase();
+    if (!conection) {
+      throw new Error("Could not delete the database");
+    }
+    return await this.connection.dropDatabase();
   }
 }
 

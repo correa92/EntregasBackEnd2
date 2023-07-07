@@ -4,8 +4,9 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/app.js"
+    "start": "nodemon src/app.js",
+    "test": "mocha src/tests/*.test.js",
+    "command": "node src/command.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,10 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "@faker-js/faker": "^8.0.2",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   }
 }
