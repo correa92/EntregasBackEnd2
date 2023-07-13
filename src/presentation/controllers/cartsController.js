@@ -21,12 +21,13 @@ export const buyCar = async (req, res, next) => {
   try {
     const classCM = new CartManager();
     let cid = req.params.cid;
+    const email = req.user.email;
 
-    const cart = await classCM.buyCar(cid, req.user.email);
+    const cart = await classCM.buyCar(cid, email);
 
     return res.status(200).json({
       status: "success",
-      message: "Cart obtained successfully",
+      message: "Buy performs successfully",
       data: cart,
     });
   } catch (e) {
@@ -57,15 +58,11 @@ export const updateCart = async (req, res, next) => {
 
     const response = await classCM.addToCart(cid, pid);
 
-    if (response.Error) {
-      return res.status(400).json({
-        status: "error",
-        message: Error,
-        error: Error,
-      });
-    }
-
-    return res.status(201).json({ status: "success", data: response });
+    return res.status(201).json({
+      status: "success",
+      message: "Product added to cart successfully",
+      data: response,
+    });
   } catch (e) {
     next(e);
   }
@@ -118,7 +115,7 @@ export const addListProducts = async (req, res, next) => {
 
     return res.status(201).json({
       status: "success",
-      message: "Product list added successfully ",
+      message: "Product list added successfully",
       data: cart,
     });
   } catch (e) {
@@ -135,15 +132,13 @@ export const updateQuantity = async (req, res, next) => {
 
     const response = await classCM.updateQuantity(cid, pid, body);
 
-    if (response.Error) {
-      return res.status(400).json({
-        status: "error",
-        message: Error,
-        Error: error,
+    return res
+      .status(201)
+      .json({
+        status: "success",
+        data: response,
+        message: "Cart updated successfully",
       });
-    }
-
-    return res.status(201).json({ status: "success", data: response });
   } catch (e) {
     next(e);
   }

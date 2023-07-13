@@ -19,21 +19,20 @@ export const get = async (req, res, next) => {
         .json({ status: "Error", Error: `The sort must be asc or desc` });
     }
 
-    const products = await classPM.find(limit, page, category, status, sort);
-
+    const data = await classPM.find(limit, page, category, status, sort);
 
     return res.json({
       status: "success",
       message: "Products obtained successfully",
-      payload: products,
-      totalPages: paginate.totalPages,
-      prevPage: paginate.prevPage,
-      nextPage: paginate.nextPage,
-      page: paginate.page,
-      hasPrevPage: paginate.hasPrevPage,
-      hasNextPage: paginate.hasNextPage,
-      prevLink: paginate.prevLink,
-      nextLink: paginate.nextLink,
+      payload: data.products,
+      totalPages: data.paginate.totalPages,
+      prevPage: data.paginate.prevPage,
+      nextPage: data.paginate.nextPage,
+      page: data.paginate.page,
+      hasPrevPage: data.paginate.hasPrevPage,
+      hasNextPage: data.paginate.hasNextPage,
+      prevLink: data.paginate.prevLink,
+      nextLink: data.paginate.nextLink,
     });
   } catch (e) {
     next(e);
@@ -97,7 +96,7 @@ export const deleteOne = async (req, res, next) => {
     const id = req.params.pid;
     const deleteProduct = await classPM.deleteOne(id);
 
-    return res.status(200).json({
+    return res.status(201).json({
       status: "success",
       message: "Product removed successfully",
       data: deleteProduct,

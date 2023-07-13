@@ -17,11 +17,12 @@ class SessionManager {
   }
 
   async login(email, password) {
+
     await loginValidation.parseAsync({ email, password });
 
     const user = await this.userRepository.getOneByEmail(email);
-    
-    if (!user) {
+
+    if (user.id == undefined) {
       throw new Error(`No account found with ${email}`);
     }
 
@@ -35,7 +36,6 @@ class SessionManager {
   }
 
   async signup(payload) {
-
     await userCreateValidation.parseAsync(payload);
     //a cart is created and linked to the user
     const cart = await this.cartRepository.create();
@@ -49,7 +49,7 @@ class SessionManager {
     }
 
     if (!id_rol) {
-      throw new Error("the role does not exist")
+      throw new Error("the role does not exist");
     }
 
     const dto = {
@@ -58,7 +58,7 @@ class SessionManager {
       password: createHash(payload.password, 10),
       role: id_rol._id.toString(),
     };
-    
+
     const user = await this.userRepository.create(dto);
 
     return { ...user, password: undefined };

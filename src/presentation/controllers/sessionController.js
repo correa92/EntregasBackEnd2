@@ -45,14 +45,16 @@ export const signup = async (req, res, next) => {
       .status(201)
       .send({ status: "success", user, message: "User created." });
   } catch (e) {
+    console.log('e: ', e);
+
     next(e);
   }
 };
-export const logout = async (req, res, next) => {
+export const logout = (req, res, next) => {
   try {
     req.session.destroy((err) => {
       if (!err) {
-        return res.send({ message: "Logout success!" });
+        return res.status(201).send({ message: "Logout success!" });
       }
 
       res.send({ message: "Logout error!", body: err });
@@ -69,7 +71,7 @@ export const forgetPassword = async (req, res, next) => {
     const user = await manager.forgetPassword(email, password);
 
     res
-      .status(200)
+      .status(201)
       .send({ status: "success", user, message: "User change password." });
   } catch (e) {
     next(e);

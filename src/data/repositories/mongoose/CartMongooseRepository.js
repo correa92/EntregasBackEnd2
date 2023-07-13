@@ -1,5 +1,7 @@
 import cartSchema from "../../models/mongoose/cartSchema.js";
 import Cart from "../../../domain/entities/Cart.js";
+import Product from "../../../domain/entities/Product.js";
+import mongoose from "mongoose";
 
 class CartMongooseRepository {
   async getOne(id) {
@@ -7,18 +9,29 @@ class CartMongooseRepository {
       .findOne({ _id: id })
       .populate(["products.idProduct"]);
 
+    const products = cartDocument.products.map((product) => {
+      return {
+        idProduct: product.idProduct._id.toString(),
+        quantity: product.quantity,
+      };
+    });
+
     return new Cart({
-      id: cartDocument?._id,
-      products: cartDocument?.products,
+      id: cartDocument?._id.toString(),
+      products: products,
     });
   }
 
   async getCart(id) {
     const cartDocument = await cartSchema.findOne({ _id: id });
 
+    const document = cartDocument.products.map((cart) => {
+      return { idProduct: cart.idProduct.toString(), quantity: cart.quantity };
+    });
+    
     return new Cart({
-      id: cartDocument?._id,
-      products: cartDocument?.products,
+      id: cartDocument?._id.toString(),
+      products: document,
     });
   }
 

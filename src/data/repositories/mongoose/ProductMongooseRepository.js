@@ -12,30 +12,29 @@ class ProductMongooseRepository {
       query.status = statusDoc;
     }
 
-
     const productDocument = await productSchema.paginate(query, {
       limit: limitDoc,
       sort: { price: sortDoc === "asc" ? 1 : -1 },
       page: pageDoc,
     });
-    
+
     const { docs, ...paginate } = productDocument;
 
     const products = docs.map(
       (prod) =>
-      new Product({
-        id: prod._id,
-        title: prod.title,
-        description: prod.description,
-        price: prod.price,
-        thumbnail: prod.thumbnail,
-        code: prod.code,
-        stock: prod.stock,
-        category: prod.category,
-        status: prod.status,
-      })
-      );
-      
+        new Product({
+          id: prod._id,
+          title: prod.title,
+          description: prod.description,
+          price: prod.price,
+          thumbnail: prod.thumbnail,
+          code: prod.code,
+          stock: prod.stock,
+          category: prod.category,
+          status: prod.status,
+        })
+    );
+
     return {
       products,
       paginate,
@@ -106,6 +105,7 @@ class ProductMongooseRepository {
     const productDocument = await productSchema.create(data);
 
     return new Product({
+      _id: productDocument._id.toString(),
       title: productDocument.title,
       description: productDocument.description,
       price: productDocument.price,

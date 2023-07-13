@@ -1,5 +1,6 @@
 class Product {
   constructor(props) {
+    this._id = props._id
     this.id = props.id;
     this.title = props.title;
     this.description = props.description;

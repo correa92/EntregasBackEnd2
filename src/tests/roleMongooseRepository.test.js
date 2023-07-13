@@ -38,6 +38,7 @@ describe("Testing Role Mongoose Repository", () => {
         expect(result.pagination.page).to.be.equals(1);
         expect(result.pagination.prevPage).to.be.equal(null);
       });
+      
   });
 
   it("El repositorio debe crear un role", function () {

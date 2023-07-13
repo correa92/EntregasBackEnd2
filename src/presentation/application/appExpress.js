@@ -2,6 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import MongoStore from "connect-mongo";
+import compression from "express-compression";
 
 import sessionRouter from "../routers/sessionRoute.js";
 import userRouter from "../routers/userRoute.js";
@@ -30,6 +31,14 @@ class AppExpress {
       })
     );
     this.app.use(logger);
+    this.app.use(
+      compression({
+        brotli: {
+          enabled: true,
+          zlib: {},
+        },
+      })
+    );
   }
 
   build() {
@@ -41,14 +50,12 @@ class AppExpress {
     this.app.use("/api/mail", mailRouter);
     this.app.use(errorHandler);
   }
-  callback()
-  {
-      return this.app;
+  callback() {
+    return this.app;
   }
 
-  close()
-  {
-      this.server.close();
+  close() {
+    this.server.close();
   }
 
   listen() {
