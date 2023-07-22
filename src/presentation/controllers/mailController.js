@@ -1,14 +1,14 @@
 import MailManager from "../../domain/managers/MailManager.js";
-
-export const send = async (req, res, next) => {
+import forgotPasswordValidation from "../../domain/validations/session/forgotPasswordValidation.js";
+export const forgotPassword = async (req, res, next) => {
   try {
-    const message = req.body;
+    const { email } = req.body;
+    await forgotPasswordValidation.parseAsync({ email });
 
-    const mail = new MailManager(message);
-    await mail.send(req.body);
+    const mail = new MailManager();
+    await mail.sendForgotPassword(email);
 
-    res.send({ status: "success", message: "Email sent!" });
-
+    res.send({ status: "success", message: "Email sent" });
   } catch (e) {
     next(e);
   }

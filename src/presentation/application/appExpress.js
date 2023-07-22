@@ -30,6 +30,7 @@ class AppExpress {
         saveUninitialized: false,
       })
     );
+
     this.app.use(logger);
     this.app.use(
       compression({

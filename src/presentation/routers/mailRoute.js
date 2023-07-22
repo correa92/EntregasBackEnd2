@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { send } from "../controllers/mailController.js";
+import { forgotPassword } from "../controllers/mailController.js";
 
 const mailRouter = Router();
 
-mailRouter.post("/", send);
+mailRouter.post("/forgot-password", forgotPassword);
 
 export default mailRouter;

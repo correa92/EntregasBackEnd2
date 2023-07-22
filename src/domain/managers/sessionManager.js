@@ -32,7 +32,7 @@ class SessionManager {
       throw new Error("Login failed, invalid password.");
     }
 
-    return await generateToken(user);
+    return await generateToken(user,"1h");
   }
 
   async signup(payload) {

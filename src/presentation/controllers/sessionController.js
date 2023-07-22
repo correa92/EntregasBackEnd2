@@ -1,5 +1,5 @@
+import jwt from "jsonwebtoken";
 import SessionManager from "../../domain/managers/sessionManager.js";
-
 export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -45,8 +45,6 @@ export const signup = async (req, res, next) => {
       .status(201)
       .send({ status: "success", user, message: "User created." });
   } catch (e) {
-    console.log('e: ', e);
-
     next(e);
   }
 };
@@ -66,13 +64,21 @@ export const logout = (req, res, next) => {
 
 export const forgetPassword = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
-    const manager = new SessionManager();
-    const user = await manager.forgetPassword(email, password);
+    const token = req.params.token;
+    const { password } = req.body;
 
-    res
-      .status(201)
-      .send({ status: "success", user, message: "User change password." });
+    jwt.verify(token, process.env.PRIVATE_KEY, async (error, credentials) => {
+      if (error) {
+        return res.status(403).send({ error: "Not authorized" });
+      }
+      const user = credentials.user;
+      const manager = new SessionManager();
+      const newData = await manager.forgetPassword(user.email, password);
+
+      res
+        .status(201)
+        .send({ status: "success", newData, message: "User change password." });
+    });
   } catch (e) {
     next(e);
   }

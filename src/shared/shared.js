@@ -8,12 +8,12 @@ export const createHash = (password) => {
 export const isValidPassword = (password, passwordHash) => {
   return bcrypt.compareSync(password, passwordHash);
 };
-export const generateToken = async (user) => {
+export const generateToken = async (user,expiresIn) => {
   
   const token = jwt.sign(
     { user: { ...user, password: undefined } },
     process.env.PRIVATE_KEY,
-    { expiresIn: "1h" }
+    { expiresIn }
   );
   return token;
 };
