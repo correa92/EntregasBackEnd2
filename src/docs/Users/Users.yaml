@@ -1,0 +1,242 @@
+paths:
+  /api/users:
+    get:
+      summary: Obtiene todos los usuarios
+      tags:
+      - Users
+      parameters:
+      - name: limit
+        in: query
+        description: Limite de usuarios
+        required: false
+        schema:
+          type: number
+      - name: page
+        in: query
+        description: Número de pagina
+        required: false
+        schema:
+          type: number
+      responses:
+        "200":
+          description: Lista de Usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+
+        "401":
+          description: El cliente no está autenticado.
+        "403":
+          description: El cliente no tiene permisos para el recurso.
+        "500":
+          description: Error en el servidor
+
+
+
+
+
+    post:
+      summary: Crea un usuario
+      tags:
+      - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/UserData'
+
+
+
+      responses:
+        "201":
+        description: User created.
+        $ref: '#/components/schemas/User'
+        "401":
+          description: El cliente no está autenticado.
+        "403":
+          description: El cliente no tiene permisos para el recurso.
+        "500":
+          description: Error en el servidor
+
+
+  /api/users/{uid}:
+    get:
+      summary: Obtiene un usuario específico
+      tags:
+      - Users
+      parameters:
+      - name: uid
+        in: path
+        required: true
+        description: ID único del Usuario a obtener
+        schema:
+          $type: String
+      responses:
+        "200":
+          description: Usuario especificado.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        "401":
+          description: El cliente no está autenticado.
+        "403":
+          description: El cliente no tiene permisos para el recurso.
+        "500":
+          description: Error en el servidor
+
+    put:
+      summary: Actualiza un usuario específico
+      tags:
+      - Users
+      parameters:
+      - name: uid
+        in: path
+        required: true
+        description: ID único del Usuario a obtener
+        schema:
+          $type: String
+      requestBody:
+        $ref: '#/components/requestBodies/User'
+
+      responses:
+        "201":
+        description: User updated.
+        $ref: '#/components/schemas/User'
+        "401":
+          description: El cliente no está autenticado.
+        "403":
+          description: El cliente no tiene permisos para el recurso.
+        "500":
+          description: Error en el servidor
+
+    delete:
+      summary: Elimina un usuario específico
+      tags:
+      - Users
+      parameters:
+      - name: uid
+        in: path
+        required: true
+        description: ID único del Usuario a eliminar
+        schema:
+          $type: String
+      requestBody:
+        $ref: '#/components/requestBodies/User'
+      responses:
+        "200":
+          description: User deleted.
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  message: User deleted.
+
+        "401":
+          description: El cliente no está autenticado.
+        "403":
+          description: El cliente no tiene permisos para el recurso.
+        "500":
+          description: Error en el servidor
+
+components:
+  schemas:
+    Role:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        permissions:
+          type: array
+          items:
+            type: string
+      example:
+        _id: "649e0a7445eb7c3562d62a39"
+        name: "user"
+        permissions:
+        - addProductToCar
+        - removeProductOfCar
+        - buyCar
+        - sendMessage
+        - updateCar
+        - updateQuantity
+        - createCart
+        - removeAllProductsFromCart
+        - getCart
+    User:
+      type: object
+      properties:
+        id:
+          type: ObjectId
+          description: Id autogenerado de mongo
+        first_name:
+          type: String
+          description: Nombre del usuario
+        last_name:
+          type: String
+          description: Apellido del usuario
+        email:
+          type: String
+          description: Correo del usuario, este campo es único
+        age:
+          type: Number
+          description: Edad del usuario.
+        isAdmin:
+          type: Boolean
+          description: Tipo de Autorización.
+        role:
+          $ref: '#/components/schemas/Role'
+
+      example:
+        id: "649e4f33e4bdee3f005a1fbb"
+        firstName: "Vegan"
+        lastName: "Cheese"
+        email: "peperoni6798@gmail.com"
+        age: 46
+        isAdmin: false
+        role:
+          $ref: '#/components/schemas/Role'
+
+  requestBodies:
+    User:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+
+
+    UserData:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: Nombre del usuario
+        lastName:
+          type: string
+          description: Apellido del usuario
+        email:
+          type: string
+          description: Correo del usuario
+        age:
+          type: number
+          description: Edad del usuario
+        password:
+          type: string
+          description: Contraseña del usuario
+        isAdmin:
+          type: boolean
+          description: Tipo de autorizacion
+
+
+
+

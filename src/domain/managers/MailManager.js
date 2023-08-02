@@ -19,6 +19,8 @@ class MailManager {
       },
     };
   }
+
+  //envios de email generales
   async send(data, templateFile) {
     const transport = nodemailer.createTransport(this.smtp_config);
 
@@ -49,6 +51,7 @@ class MailManager {
     return await transport.sendMail(mailOption);
   }
 
+  //envio de email para reestablecer contraseña
   async sendForgotPassword(email) {
     const um = new UserManager();
     const user = await um.getOneByEmail(email);

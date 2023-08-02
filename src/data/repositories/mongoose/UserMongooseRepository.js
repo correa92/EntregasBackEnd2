@@ -9,24 +9,10 @@ class UserMongooseRepository {
     const userDocuments = await userSchema.paginate({}, { limit, page });
     const { docs, ...pagination } = userDocuments;
 
-    const users = docs.map(
-      (document) =>
-        new User({
-          id: document._id,
-          firstName: document.firstName,
-          lastName: document.lastName,
-          email: document.email,
-          age: document.age,
-          isAdmin: document.isAdmin,
-          role: document.role
-            ? new Role(
-                document.role.id,
-                document.role.name,
-                document.role.permissions
-              )
-            : null,
-        })
-    );
+    const users = docs.map((document) => {
+      document.password = undefined;
+      return new User(document);
+    });
 
     return { users, pagination };
   }
@@ -37,32 +23,14 @@ class UserMongooseRepository {
     if (!userDocument) {
       throw new Error("User dont exist.");
     }
-
-    return new User({
-      id: userDocument?._id,
-      firstName: userDocument?.firstName,
-      lastName: userDocument?.lastName,
-      email: userDocument?.email,
-      age: userDocument?.age,
-      password: userDocument?.password,
-      isAdmin: userDocument.isAdmin,
-      role: userDocument.role,
-    });
+    userDocument.password = undefined;
+    return new User(userDocument);
   }
 
   async getOneByEmail(email) {
     const userDocument = await userSchema.findOne({ email });
 
-    return new User({
-      id: userDocument?._id,
-      firstName: userDocument?.firstName,
-      lastName: userDocument?.lastName,
-      email: userDocument?.email,
-      age: userDocument?.age,
-      password: userDocument?.password,
-      isAdmin: userDocument?.isAdmin,
-      role: userDocument?.role,
-    });
+    return new User(userDocument);
   }
 
   async create(data) {
@@ -72,17 +40,7 @@ class UserMongooseRepository {
       throw new Error("Could not create document");
     }
 
-    return new User({
-      id: userDocument._id,
-      firstName: userDocument.firstName,
-      lastName: userDocument.lastName,
-      email: userDocument.email,
-      age: userDocument.age,
-      password: userDocument.password,
-      cart: userDocument.cart,
-      isAdmin: userDocument.isAdmin,
-      roles: userDocument.role,
-    });
+    return new User(userDocument);
   }
 
   async updateOne(id, data) {
@@ -94,15 +52,7 @@ class UserMongooseRepository {
       throw new Error("User dont exist.");
     }
 
-    return new User({
-      id: userDocument._id,
-      firstName: userDocument.firstName,
-      lastName: userDocument.lastName,
-      email: userDocument.email,
-      age: userDocument.age,
-      cart: userDocument.cart,
-      isAdmin: userDocument.isAdmin,
-    });
+    return new User(userDocument);
   }
 
   async deleteOne(id) {

@@ -3,6 +3,9 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import compression from "express-compression";
+import swaggerJSDoc from "swagger-jsdoc";
+import swaggerUiExpress  from "swagger-ui-express";
+import { resolve } from "path";
 
 import sessionRouter from "../routers/sessionRoute.js";
 import userRouter from "../routers/userRoute.js";
@@ -16,6 +19,23 @@ import logger from "../middleware/logger.js";
 class AppExpress {
   init() {
     this.app = express();
+
+    const docsPath = resolve("./src/");
+    const swaggerOptions = {
+      definition: {
+        openapi: "3.0.1",
+        info: {
+          title: "Documentación Ecommerce Coderhouse",
+          description:
+            "Proyecto final del curso de backend por Correa Alejandro E.",
+        },
+      },
+      apis: [`${docsPath}/docs/**/*.yaml`],
+    };
+    
+    const specs = swaggerJSDoc(swaggerOptions);
+    this.app.use('/api/docs',swaggerUiExpress.serve,swaggerUiExpress.setup(specs));
+
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
