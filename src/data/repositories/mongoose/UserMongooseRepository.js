@@ -29,7 +29,6 @@ class UserMongooseRepository {
 
   async getOneByEmail(email) {
     const userDocument = await userSchema.findOne({ email });
-
     return new User(userDocument);
   }
 

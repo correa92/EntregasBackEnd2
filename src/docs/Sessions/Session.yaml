@@ -1,0 +1,167 @@
+
+paths:
+  /api/sessions/current:
+    get:
+      summary: Obtiene datos del usuario actual que inició sesión
+      tags:
+      - Sessions
+      security:
+      - BearerAuth: []
+
+      responses:
+        "200":
+          description: Datos del Usuario
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+
+        "401":
+          description: El cliente no está autenticado.
+        "403":
+          description: El cliente no tiene permisos para el recurso.
+        "500":
+          description: Error en el servidor
+
+
+
+
+
+
+  /api/sessions/signup:
+    post:
+      summary: Crea un usuario
+      tags:
+      - Sessions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/UserData'
+
+      responses:
+        "201":
+          description: Datos del Usuario
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        "401":
+          description: El cliente no está autenticado.
+        "403":
+          description: El cliente no tiene permisos para el recurso.
+        "500":
+          description: Error en el servidor
+
+  /api/sessions/loguot:
+    post:
+      summary: Cierre de sesión de usuario
+      tags:
+      - Sessions
+
+      responses:
+        "200":
+          description: Cierre de sesión
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  message: Logout success.
+
+        "401":
+          description: El cliente no está autenticado.
+        "403":
+          description: El cliente no tiene permisos para el recurso.
+        "500":
+          description: Error en el servidor
+
+#   /api/sessions/{uid}:
+#     get:
+#       summary: Obtiene un usuario específico
+#       tags:
+#       - Users
+#       parameters:
+#       - name: uid
+#         in: path
+#         required: true
+#         description: ID único del Usuario a obtener
+#         schema:
+#           $type: String
+#       responses:
+#         "200":
+#           description: Usuario especificado.
+#           content:
+#             application/json:
+#               schema:
+#                 type: array
+#                 items:
+#                   $ref: '#/components/schemas/User'
+#         "401":
+#           description: El cliente no está autenticado.
+#         "403":
+#           description: El cliente no tiene permisos para el recurso.
+#         "500":
+#           description: Error en el servidor
+
+#     put:
+#       summary: Actualiza un usuario específico
+#       tags:
+#       - Users
+#       parameters:
+#       - name: uid
+#         in: path
+#         required: true
+#         description: ID único del Usuario a obtener
+#         schema:
+#           $type: String
+#       requestBody:
+#         $ref: '#/components/requestBodies/User'
+
+#       responses:
+#         "201":
+#         description: User updated.
+#         $ref: '#/components/schemas/User'
+#         "401":
+#           description: El cliente no está autenticado.
+#         "403":
+#           description: El cliente no tiene permisos para el recurso.
+#         "500":
+#           description: Error en el servidor
+
+#     delete:
+#       summary: Elimina un usuario específico
+#       tags:
+#       - Users
+#       parameters:
+#       - name: uid
+#         in: path
+#         required: true
+#         description: ID único del Usuario a eliminar
+#         schema:
+#           $type: String
+#       requestBody:
+#         $ref: '#/components/requestBodies/User'
+#       responses:
+#         "200":
+#           description: User deleted.
+#           content:
+#             application/json:
+#               schema:
+#                 type: object
+#                 items:
+#                   message: User deleted.
+
+#         "401":
+#           description: El cliente no está autenticado.
+#         "403":
+#           description: El cliente no tiene permisos para el recurso.
+#         "500":
+#           description: Error en el servidor
+
+
