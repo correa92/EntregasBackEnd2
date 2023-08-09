@@ -4,7 +4,7 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import compression from "express-compression";
 import swaggerJSDoc from "swagger-jsdoc";
-import swaggerUiExpress  from "swagger-ui-express";
+import swaggerUiExpress from "swagger-ui-express";
 import { resolve } from "path";
 
 import sessionRouter from "../routers/sessionRoute.js";
@@ -14,7 +14,7 @@ import mailRouter from "../routers/mailRoute.js";
 import productsRoute from "../../presentation/routers/productsRoute.js";
 import cartsRoute from "../../presentation/routers/cartsRoute.js";
 import errorHandler from "../middleware/errorHandler.js";
-import logger from "../middleware/logger.js";
+import { devLogger } from "../middleware/logger.js";
 
 class AppExpress {
   init() {
@@ -32,10 +32,13 @@ class AppExpress {
       },
       apis: [`${docsPath}/docs/**/*.yaml`],
     };
-    
-    const specs = swaggerJSDoc(swaggerOptions);
-    this.app.use('/api/docs',swaggerUiExpress.serve,swaggerUiExpress.setup(specs));
 
+    const specs = swaggerJSDoc(swaggerOptions);
+    this.app.use(
+      "/api/docs",
+      swaggerUiExpress.serve,
+      swaggerUiExpress.setup(specs)
+    );
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
@@ -51,7 +54,7 @@ class AppExpress {
       })
     );
 
-    this.app.use(logger);
+    this.app.use(devLogger);
     this.app.use(
       compression({
         brotli: {

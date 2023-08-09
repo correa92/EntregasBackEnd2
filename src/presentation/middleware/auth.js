@@ -4,6 +4,7 @@ const auth = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
+    
     return res.status(401).send({ message: "Not authenticated" });
   }
 
@@ -11,6 +12,7 @@ const auth = (req, res, next) => {
 
   jwt.verify(token, process.env.PRIVATE_KEY, (error, credentials) => {
     if (error) {
+
       return res.status(403).send({ error: "Not authorized" });
     }
 

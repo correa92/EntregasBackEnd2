@@ -1,0 +1,29 @@
+warning: ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "number",
+    "received": "nan",
+    "path": [
+      "age"
+    ],
+    "message": "Expected number, received nan"
+  }
+]
+    at Object.get error [as error] (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/node_modules/zod/lib/index.mjs:537:31)
+    at ZodObject.parseAsync (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/node_modules/zod/lib/index.mjs:659:22)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async SessionManager.signup (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:39:5)
+    at async signup (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:42:18)
+warning: Error: Login failed, invalid password.
+    at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:32:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:9:25)
+warning: Error: Login failed, invalid password.
+    at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:32:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:9:25)
+warning: Error: No account found with peperoni67981@gmail.com
+    at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:26:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:9:25)
