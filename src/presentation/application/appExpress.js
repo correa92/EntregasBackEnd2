@@ -32,16 +32,16 @@ class AppExpress {
       },
       apis: [`${docsPath}/docs/**/*.yaml`],
     };
-
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(cookieParser());
     const specs = swaggerJSDoc(swaggerOptions);
     this.app.use(
       "/api/docs",
       swaggerUiExpress.serve,
       swaggerUiExpress.setup(specs)
     );
-    this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(cookieParser());
+
     this.app.use(
       session({
         store: MongoStore.create({

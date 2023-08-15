@@ -57,6 +57,25 @@ export const update = async (req, res, next) => {
   }
 };
 
+export const createDocument = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const file = req.file; 
+    
+    if (!file){
+      throw new Error('Not file');
+    }
+
+    const manager = new UserManager();
+    const result = await manager.updateDocuments(id, req.body);
+
+    res.send({ status: "success", result, message: "User updated." });
+
+  } catch (e) {
+    next(e);
+  }
+};
+
 export const deleteOne = async (req, res, next) => {
   try {
     const { id } = req.params;

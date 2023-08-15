@@ -27,3 +27,283 @@ warning: Error: No account found with peperoni67981@gmail.com
     at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:26:13)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:9:25)
+warning: Error: ENOENT: no such file or directory, open 'J:\documents\e34c656b-1dab-48db-b2b6-5adecaad245e'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\documents\5b621f0c-cf8f-4cb1-9f02-8ea999b7f8a8'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\documents\744d84af-bf31-4ebd-9d06-71a98b6d6023'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\documents\37e49255-c691-4eec-afaa-9173dc4a50b6'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\documents\8cbe0ad0-16d4-4485-be35-5467b73be31e'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\documents\ad9172a9-5f0e-4b10-b469-c61734cf3917'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\5c9ed2c9-8819-4712-82b1-212552b7079a.image\jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\74e7083e-5eee-4e73-94a8-a8d0c6ec12a5.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\fa38a73d-1d9c-4ad9-bf99-285cce657b87.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\7545b208-b4df-473c-a86b-52a1404799ec.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\77e1a97f-33d5-4e2d-962b-f24075013c4a.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\c92a09db-8d2e-49ff-8da9-05f78d6d0ec4.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\e8c082b9-69c4-4c15-8d63-ee50cea16521.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\26ac6b4e-53f0-4a6b-9fde-800a75fbc58d.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\2dfe7aac-f3fc-4afd-b183-654ab875dfe5.jpeg'
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\32b74d20-e376-41ed-a8d0-903523770012.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\1da23153-bb13-43b0-bb89-8d6fb0a83bd6.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\279dfad5-6de6-4263-bc35-8063f7a21ec8.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\eee921c8-ac7a-46d4-8d0a-cf71ad11324a.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\2a42bd42-fcb9-4375-b636-0a5c22a45d63.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\b31ab898-416d-4070-815b-0f786c58df4e.jpeg'
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\public\images\undefined\d430fd8c-144d-488e-af58-1839c70ce144.jpeg'
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at uploaderPrueba (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/middleware/multer.js:36:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at uploaderPrueba (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/middleware/multer.js:36:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:155:11
+    at WriteStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\storage\disk.js:43:9)
+    at WriteStream.emit (node:events:525:35)
+    at finish (node:internal/streams/writable:756:10)
+    at finishMaybe (node:internal/streams/writable:741:9)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:513:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at getDynamicFolderType (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/middleware/multer.js:13:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at getDynamicFolderType (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/middleware/multer.js:13:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:69:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:68:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:68:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:68:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:68:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:68:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:284:15
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:365:14)
+    at param (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:421:3)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\index.js:280:10)
+warning: ReferenceError: result is not defined
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:73:35)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:155:11
+    at WriteStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\storage\disk.js:43:9)
+    at WriteStream.emit (node:events:525:35)
+    at finish (node:internal/streams/writable:756:10)
+    at finishMaybe (node:internal/streams/writable:741:9)
+warning: ReferenceError: result is not defined
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:73:35)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:155:11
+    at WriteStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\storage\disk.js:43:9)
+    at WriteStream.emit (node:events:525:35)
+    at finish (node:internal/streams/writable:756:10)
+    at finishMaybe (node:internal/streams/writable:741:9)
+warning: ReferenceError: result is not defined
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:73:35)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:155:11
+    at WriteStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\storage\disk.js:43:9)
+    at WriteStream.emit (node:events:525:35)
+    at finish (node:internal/streams/writable:756:10)
+    at finishMaybe (node:internal/streams/writable:741:9)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:67:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:155:11
+    at WriteStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\storage\disk.js:43:9)
+    at WriteStream.emit (node:events:525:35)
+    at finish (node:internal/streams/writable:756:10)
+    at finishMaybe (node:internal/streams/writable:741:9)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:66:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:513:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:66:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:513:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:66:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:513:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:66:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:513:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:66:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:513:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)

@@ -1,5 +1,8 @@
 import jwt from "jsonwebtoken";
+import dayjs from "dayjs";
 import SessionManager from "../../domain/managers/sessionManager.js";
+import UserManager from "../../domain/managers/userManager.js";
+
 export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -50,8 +53,12 @@ export const signup = async (req, res, next) => {
 };
 export const logout = (req, res, next) => {
   try {
-    req.session.destroy((err) => {
+    req.session.destroy(async (err) => {
       if (!err) {
+        const idUser = req.user.id;
+        const UM = new UserManager();
+        await UM.updateOne(idUser, { last_connection: dayjs() });
+        delete req.headers.authorization;
         return res.status(201).send({ message: "Logout success!" });
       }
 

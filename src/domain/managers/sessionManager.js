@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 import CartMongooseRepository from "../../data/repositories/mongoose/CartMongooseRepository.js";
 import UserMongooseRepository from "../../data/repositories/mongoose/UserMongooseRepository.js";
 import RoleMongooseRepository from "../../data/repositories/mongoose/RoleMongooseRepository.js";
@@ -17,7 +19,6 @@ class SessionManager {
   }
 
   async login(email, password) {
-
     await loginValidation.parseAsync({ email, password });
 
     const user = await this.userRepository.getOneByEmail(email);
@@ -32,7 +33,9 @@ class SessionManager {
       throw new Error("Login failed, invalid password.");
     }
 
-    return await generateToken(user,"1h");
+    this.userRepository.updateOne(user.id, { last_connection: dayjs() });
+
+    return await generateToken(user, "1h");
   }
 
   async signup(payload) {
@@ -75,6 +78,10 @@ class SessionManager {
     };
 
     return await this.userRepository.updateOne(user.id, dto);
+  }
+
+  async logOut(id, data) {
+    return this.userRepository.updateOne(id, data);
   }
 }
 

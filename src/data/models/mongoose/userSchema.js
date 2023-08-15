@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import mongoose, { Schema } from "mongoose";
 import paginate from "mongoose-paginate-v2";
 
@@ -12,6 +13,8 @@ const UserSchema = new Schema({
   cart: { type: Schema.Types.ObjectId },
   isAdmin: { type: Schema.Types.Boolean, default: false },
   role: { type: Schema.Types.ObjectId, index: true, ref: "roles" },
+  documents: { type: [{}], require: true, default:[] },
+  last_connection: { type: Schema.Types.Date, default: dayjs()}
 });
 
 UserSchema.plugin(paginate);

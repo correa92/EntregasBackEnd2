@@ -54,6 +54,19 @@ class UserMongooseRepository {
     return new User(userDocument);
   }
 
+  async updateDocuments(id, data) {
+    const userDocument = await userSchema.findOneAndUpdate(
+      { _id: id },
+      { $push: { documents: data } },
+      { new: true }
+    );
+
+    if (!userDocument) {
+      throw new Error("The document does not exist");
+    }
+    return new User(userDocument);
+  }
+
   async deleteOne(id) {
     return await userSchema.deleteOne({ _id: id });
   }

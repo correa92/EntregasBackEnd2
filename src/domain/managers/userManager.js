@@ -31,6 +31,11 @@ class UserManager {
     return this.userRepository.updateOne(id, data);
   }
 
+  async updateDocuments(id, data) {
+    return this.userRepository.updateDocuments(id, data);
+  }
+
+
   async deleteOne(id) {
     return this.userRepository.deleteOne(id);
   }
