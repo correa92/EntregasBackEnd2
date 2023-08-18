@@ -20,7 +20,7 @@ export const login = async (req, res, next) => {
       })
       .send({
         status: "success",
-        message: "Login success! welcome",
+        message: `Login success! welcome ${email}`,
         accessToken,
       });
   } catch (e) {
@@ -39,14 +39,13 @@ export const current = async (req, res, next) => {
 export const signup = async (req, res, next) => {
   try {
     req.body.age = parseInt(req.body.age);
-    req.body.isAdmin = Boolean(req.body.isAdmin);
 
     const manager = new SessionManager();
     const user = await manager.signup(req.body);
 
     return res
       .status(201)
-      .send({ status: "success", user, message: "User created." });
+      .send({ status: "success", message: "User created.", payload: user });
   } catch (e) {
     next(e);
   }
@@ -55,14 +54,15 @@ export const logout = (req, res, next) => {
   try {
     req.session.destroy(async (err) => {
       if (!err) {
-        const idUser = req.user.id;
-        const UM = new UserManager();
-        await UM.updateOne(idUser, { last_connection: dayjs() });
         delete req.headers.authorization;
-        return res.status(201).send({ message: "Logout success!" });
+        const idUser = req.user.id;
+        const classUM = new UserManager();
+        await classUM.updateOne(idUser, { last_connection: dayjs() });
       }
-
-      res.send({ message: "Logout error!", body: err });
+      res
+        .status(201)
+        .cookie("accessToken", {}, { maxAge: 0, httpOnly: true })
+        .send({ message: "Logout success!" });
     });
   } catch (e) {
     next(e);
@@ -78,13 +78,42 @@ export const forgetPassword = async (req, res, next) => {
       if (error) {
         return res.status(403).send({ error: "Not authorized" });
       }
+
       const user = credentials.user;
       const manager = new SessionManager();
       const newData = await manager.forgetPassword(user.email, password);
 
-      res
-        .status(201)
-        .send({ status: "success", newData, message: "User change password." });
+      res.status(201).send({
+        status: "success",
+        payload: newData,
+        message: "User change password.",
+      });
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+export const recoveringPassword = async (req, res, next) => {
+  try {
+    const token = req.params.token;
+    const classSM = new SessionManager();
+    const html = await classSM.recoveringPassword(token);
+
+    res.status(200).send(html);
+  } catch (e) {
+    next(e);
+  }
+};
+
+export const changePassword = async (req, res, next) => {
+  try {
+    console.log(req?.user);
+
+    res.status(200).send({
+      status: "success",
+      user: req.user,
+      message: "User change password.",
     });
   } catch (e) {
     next(e);

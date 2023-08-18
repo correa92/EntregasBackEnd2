@@ -42,7 +42,7 @@ class CartMongooseRepository {
       throw new Error("Could not create cart");
     }
     return new Cart({
-      id: cartDocument._id,
+      id: cartDocument._id.toString(),
       products: cartDocument.products,
     });
   }

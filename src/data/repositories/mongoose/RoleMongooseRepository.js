@@ -8,18 +8,15 @@ class RoleMongooseRepository {
 
     const roles = docs.map(
       (document) =>
-        new Role({
-          id: document._id,
-          name: document.name,
-          permissions: document.permissions,
-        })
+        new Role(document)
     );
 
     return { roles, pagination };
   }
 
   async findOne(filter) {
-    return await roleSchema.findOne(filter);
+    const role = await roleSchema.findOne(filter);
+    return new Role(role);
   }
 
   async addPermissions(id, permission) {
@@ -37,11 +34,7 @@ class RoleMongooseRepository {
       );
     }
 
-    return new Role({
-      id: roleDocument._id,
-      name: roleDocument.name,
-      permissions: roleDocument.permissions,
-    });
+    return new Role(roleDocument);
   }
 
   async getOne(id) {
@@ -51,21 +44,13 @@ class RoleMongooseRepository {
       throw new Error("Role dont exist.");
     }
 
-    return new Role({
-      id: roleDocument._id,
-      name: roleDocument.name,
-      permissions: roleDocument.permissions,
-    });
+    return new Role(roleDocument);
   }
 
   async create(data) {
     const roleDocument = await roleSchema.create(data);
 
-    return new Role({
-      id: roleDocument._id,
-      name: roleDocument.name,
-      permissions: roleDocument.permissions,
-    });
+    return new Role(roleDocument);
   }
 
   async updateOne(id, data) {
@@ -77,11 +62,7 @@ class RoleMongooseRepository {
       throw new Error("Role dont exist.");
     }
 
-    return new Role({
-      id: roleDocument._id,
-      name: roleDocument.name,
-      permissions: roleDocument.permissions,
-    });
+    return new Role(roleDocument);
   }
 
   async deleteOne(id) {

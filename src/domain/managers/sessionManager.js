@@ -1,4 +1,7 @@
 import dayjs from "dayjs";
+import { resolve } from "path";
+import fs from 'fs'
+import Handlebars from "handlebars";
 
 import CartMongooseRepository from "../../data/repositories/mongoose/CartMongooseRepository.js";
 import UserMongooseRepository from "../../data/repositories/mongoose/UserMongooseRepository.js";
@@ -10,7 +13,6 @@ import {
 } from "../../shared/shared.js";
 import loginValidation from "../validations/session/loginValidation.js";
 import userCreateValidation from "../validations/user/userCreateValidation.js";
-
 class SessionManager {
   constructor() {
     this.userRepository = new UserMongooseRepository();
@@ -42,24 +44,17 @@ class SessionManager {
     await userCreateValidation.parseAsync(payload);
     //a cart is created and linked to the user
     const cart = await this.cartRepository.create();
+    const role = await this.roleRepository.findOne({ name: "client" });
 
-    let id_rol = undefined;
-
-    if (payload.isAdmin) {
-      id_rol = await this.roleRepository.findOne({ name: "admin" });
-    } else {
-      id_rol = await this.roleRepository.findOne({ name: "client" });
-    }
-
-    if (!id_rol) {
+    if (role.id === undefined) {
       throw new Error("the role does not exist");
     }
 
     const dto = {
       ...payload,
-      cart: cart.id.toString(),
+      cart: cart.id,
       password: createHash(payload.password, 10),
-      role: id_rol._id.toString(),
+      role: role.id,
     };
 
     const user = await this.userRepository.create(dto);
@@ -78,6 +73,19 @@ class SessionManager {
     };
 
     return await this.userRepository.updateOne(user.id, dto);
+  }
+
+  async recoveringPassword(token) {
+    const templatePath = resolve(
+      `./src/presentation/views/forgotPassword/recoveringPassword.hbs`
+    );
+    const source = fs.readFileSync(templatePath).toString();
+    const template = Handlebars.compile(source);
+
+    const html = template({
+      urlToken: `http://localhost:${process.env.SERVER_PORT}/api/sessions/forget-password/${token}`,
+    });
+    return html
   }
 
   async logOut(id, data) {

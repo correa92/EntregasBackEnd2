@@ -6,11 +6,11 @@ import compression from "express-compression";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUiExpress from "swagger-ui-express";
 import { resolve } from "path";
+import cors from 'cors';
 
 import sessionRouter from "../routers/sessionRoute.js";
 import userRouter from "../routers/userRoute.js";
 import roleRouter from "../routers/roleRouter.js";
-import mailRouter from "../routers/mailRoute.js";
 import productsRoute from "../../presentation/routers/productsRoute.js";
 import cartsRoute from "../../presentation/routers/cartsRoute.js";
 import errorHandler from "../middleware/errorHandler.js";
@@ -19,8 +19,8 @@ import { devLogger } from "../middleware/logger.js";
 class AppExpress {
   init() {
     this.app = express();
-
-    const docsPath = resolve("./src/");
+    
+    const docsPath = resolve("./src");
     const swaggerOptions = {
       definition: {
         openapi: "3.0.1",
@@ -34,6 +34,8 @@ class AppExpress {
     };
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(cors())
+    this.app.use(express.static(`${docsPath}/presentation/public`));
     this.app.use(cookieParser());
     const specs = swaggerJSDoc(swaggerOptions);
     this.app.use(
@@ -71,7 +73,6 @@ class AppExpress {
     this.app.use("/api/roles", roleRouter);
     this.app.use("/api/products", productsRoute);
     this.app.use("/api/carts", cartsRoute);
-    this.app.use("/api/mail", mailRouter);
     this.app.use(errorHandler);
   }
   callback() {

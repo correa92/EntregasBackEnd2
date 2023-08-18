@@ -53,14 +53,14 @@ class MailManager {
 
   //envio de email para reestablecer contraseña
   async sendForgotPassword(email) {
-    const um = new UserManager();
-    const user = await um.getOneByEmail(email);
+    const classUM = new UserManager();
+    const user = await classUM.getOneByEmail(email);
 
     if (user.id == undefined) {
       throw new Error(`No account found with ${email}`);
     }
 
-    const token = await generateToken(user, "1h");
+    const token = await generateToken(user, "5m");
 
     const transport = nodemailer.createTransport(this.smtp_config);
 
@@ -72,7 +72,7 @@ class MailManager {
 
     const html = template({
       company: "Coderhouse",
-      token: `localhost:${process.env.SERVER_PORT}/api/sessions/forget-password/${token}`,
+      urlToken: `http://localhost:${process.env.SERVER_PORT}/api/sessions/forget-password/${token}`,
       userName: user.firstName,
       email: user.email,
       img1: "cid:coder.png",
