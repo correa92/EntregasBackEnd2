@@ -6,7 +6,8 @@ import compression from "express-compression";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUiExpress from "swagger-ui-express";
 import { resolve } from "path";
-import cors from 'cors';
+import cors from "cors";
+import helmet from "helmet";
 
 import sessionRouter from "../routers/sessionRoute.js";
 import userRouter from "../routers/userRoute.js";
@@ -19,7 +20,7 @@ import { devLogger } from "../middleware/logger.js";
 class AppExpress {
   init() {
     this.app = express();
-    
+
     const docsPath = resolve("./src");
     const swaggerOptions = {
       definition: {
@@ -34,7 +35,8 @@ class AppExpress {
     };
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(cors())
+    this.app.use(cors());
+    this.app.use(helmet());
     this.app.use(express.static(`${docsPath}/presentation/public`));
     this.app.use(cookieParser());
     const specs = swaggerJSDoc(swaggerOptions);

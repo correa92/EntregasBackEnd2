@@ -1,6 +1,5 @@
 import userSchema from "../../models/mongoose/userSchema.js";
 import User from "../../../domain/entities/User.js";
-import Role from "../../../domain/entities/Role.js";
 
 class UserMongooseRepository {
   async paginate(criteria) {
@@ -11,12 +10,29 @@ class UserMongooseRepository {
 
     const users = docs.map((document) => {
       document.password = undefined;
-      return new User(document);
+      return new User({
+        id: document._id,
+        firstName: document?.firstName,
+        email: document?.email,
+        role: document?.role.name,
+      });
     });
 
     return { users, pagination };
   }
+  async find(filter) {
+    const userDocument = await userSchema.find(filter);
 
+    if (!userDocument) {
+      throw new Error("Users dont exist.");
+    }
+    userDocument.password = undefined;
+
+    const users = userDocument.map((u) => {
+      return new User({ id: u?._id, email: u?.email, cart: u?.cart});
+    });
+    return users;
+  }
   async getOne(id) {
     const userDocument = await userSchema.findOne({ _id: id });
 
@@ -34,11 +50,9 @@ class UserMongooseRepository {
 
   async create(data) {
     const userDocument = await userSchema.create(data);
-
     if (!userDocument) {
       throw new Error("Could not create document");
     }
-
     return new User(userDocument);
   }
 
@@ -69,6 +83,12 @@ class UserMongooseRepository {
 
   async deleteOne(id) {
     return await userSchema.deleteOne({ _id: id });
+  }
+
+  async deleteMany(filter) {
+    const userDocuments = await userSchema.deleteMany(filter);
+
+    return userDocuments;
   }
 }
 

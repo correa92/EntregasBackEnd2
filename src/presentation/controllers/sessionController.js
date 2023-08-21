@@ -108,9 +108,7 @@ export const recoveringPassword = async (req, res, next) => {
 
 export const changePassword = async (req, res, next) => {
   try {
-    console.log(req?.user);
-
-    res.status(200).send({
+    res.status(201).send({
       status: "success",
       user: req.user,
       message: "User change password.",

@@ -20,20 +20,7 @@ class ProductMongooseRepository {
 
     const { docs, ...paginate } = productDocument;
 
-    const products = docs.map(
-      (prod) =>
-        new Product({
-          id: prod._id,
-          title: prod.title,
-          description: prod.description,
-          price: prod.price,
-          thumbnail: prod.thumbnail,
-          code: prod.code,
-          stock: prod.stock,
-          category: prod.category,
-          status: prod.status,
-        })
-    );
+    const products = docs.map((prod) => new Product(prod));
 
     return {
       products,
@@ -49,17 +36,7 @@ class ProductMongooseRepository {
     if (!productDocument) {
       throw new Error("The product does not exist");
     }
-    return new Product({
-      id: productDocument?.id,
-      title: productDocument?.title,
-      description: productDocument?.description,
-      price: productDocument?.price,
-      thumbnail: productDocument?.thumbnail,
-      code: productDocument?.code,
-      stock: productDocument?.stock,
-      category: productDocument?.category,
-      status: productDocument?.status,
-    });
+    return new Product(productDocument);
   }
   async updateStock(idProduct, stock) {
     const productDocument = await productSchema.findOneAndUpdate(
@@ -71,51 +48,21 @@ class ProductMongooseRepository {
     if (!productDocument) {
       throw new Error("The product does not exist");
     }
-    return new Product({
-      title: productDocument?.title,
-      description: productDocument?.description,
-      price: productDocument?.price,
-      thumbnail: productDocument?.thumbnail,
-      code: productDocument?.code,
-      stock: productDocument?.stock,
-      category: productDocument?.category,
-      status: productDocument?.status,
-      id: productDocument?.id,
-    });
+    return new Product(productDocument);
   }
 
   async findOne(id) {
     const productDocument = await productSchema.findOne({ _id: id });
+    if (!productDocument) {
+      throw new Error("Not exist products");
+    }
 
-    return new Product({
-      title: productDocument?.title,
-      description: productDocument?.description,
-      price: productDocument?.price,
-      thumbnail: productDocument?.thumbnail,
-      code: productDocument?.code,
-      stock: productDocument?.stock,
-      category: productDocument?.category,
-      status: productDocument?.status,
-      id: productDocument?.id,
-      _id: productDocument?._id.toString(),
-    });
+    return new Product(productDocument);
   }
 
   async create(data) {
     const productDocument = await productSchema.create(data);
-
-    return new Product({
-      _id: productDocument._id.toString(),
-      title: productDocument.title,
-      description: productDocument.description,
-      price: productDocument.price,
-      thumbnail: productDocument.thumbnail,
-      code: productDocument.code,
-      stock: productDocument.stock,
-      category: productDocument.category,
-      status: productDocument.status,
-      id: productDocument.id,
-    });
+    return new Product(productDocument);
   }
 
   async updateOne(id, data) {
@@ -128,17 +75,7 @@ class ProductMongooseRepository {
     if (!productDocument) {
       throw new Error("The product does not exist");
     }
-    return new Product({
-      title: productDocument?.title,
-      description: productDocument?.description,
-      price: productDocument?.price,
-      thumbnail: productDocument?.thumbnail,
-      code: productDocument?.code,
-      stock: productDocument?.stock,
-      category: productDocument?.category,
-      status: productDocument?.status,
-      id: productDocument?.id,
-    });
+    return new Product(productDocument);
   }
 
   async deleteOne(id) {

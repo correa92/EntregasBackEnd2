@@ -4,7 +4,8 @@ import dotenv from "dotenv";
 dotenv.config(); // Need before get config
 
 import mongoose from "mongoose";
-import AddUser from "./presentation/commands/AddUser.js";
+import addUser from "./presentation/commands/AddUser.js";
+import addRole from "./presentation/commands/AddRole.js";
 
 void (async () => {
   try {
@@ -13,7 +14,8 @@ void (async () => {
       useUnifiedTopology: true,
     });
 
-    program.addCommand(AddUser);
+    program.addCommand(addUser);
+    program.addCommand(addRole);
 
     await program.parseAsync(process.argv);
 

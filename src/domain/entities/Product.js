@@ -1,7 +1,6 @@
 class Product {
   constructor(props) {
-    this._id = props._id
-    this.id = props.id;
+    this.id = props._id.toString();
     this.title = props.title;
     this.description = props.description;
     this.price = props.price;

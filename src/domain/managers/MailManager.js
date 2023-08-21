@@ -72,7 +72,7 @@ class MailManager {
 
     const html = template({
       company: "Coderhouse",
-      urlToken: `http://localhost:${process.env.SERVER_PORT}/api/sessions/forget-password/${token}`,
+      urlToken: `http://${process.env.HOST}${process.env.SERVER_PORT}/api/sessions/forget-password/${token}`,
       userName: user.firstName,
       email: user.email,
       img1: "cid:coder.png",

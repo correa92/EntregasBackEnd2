@@ -38,7 +38,6 @@ const loggerConfig = {
 const loggerWinston = winston.createLogger(loggerConfig);
 
 export const devLogger = (req, res, next) => {
-  
   req.logger = loggerWinston;
   req.logger.info(
     `[${new Date().toLocaleTimeString()}] ${req.method} en ${req.path} }`
@@ -48,6 +47,6 @@ export const devLogger = (req, res, next) => {
 
 export const prodLogger = (req, res, next) => {
   req.logger = loggerWinston;
-  req.logger.warning('Alerta!');
+  req.logger.warning("Alerta!");
   next();
 };

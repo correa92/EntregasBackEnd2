@@ -15,13 +15,12 @@ class RoleManager {
 
   async create(data) {
     const { name, permissions } = data;
-
     const dato = await this.roleRepository.findOne({ name });
 
-    if (!dato) {
+    if (dato.name === undefined) {
       const newRol = {
         name: name,
-        permissions: [permissions],
+        permissions: permissions,
       };
       return await this.roleRepository.create(newRol);
     } else {

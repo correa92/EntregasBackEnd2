@@ -4,7 +4,7 @@ const authorization = (permission) => {
 
     if (!user.role?.permissions.includes(permission)) {
       return res.status(401).send({
-        message: "Not authorization!, you don't have the permissions",
+        message: "Not authorization!, you do not have the permissions",
       });
     }
 

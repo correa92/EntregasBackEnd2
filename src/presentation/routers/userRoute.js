@@ -8,6 +8,7 @@ import {
   save,
   update,
   createDocument,
+  deleteUsers
 } from "../controllers/userController.js";
 import { uploader } from "../middleware/multer.js";
 
@@ -25,4 +26,5 @@ userRouter.post(
 );
 userRouter.put("/:id", auth, authorization("updateUser"), update);
 userRouter.delete("/:id", auth, authorization("deleteUser"), deleteOne);
+userRouter.delete("/",auth,authorization("deleteUsers"),deleteUsers)
 export default userRouter;

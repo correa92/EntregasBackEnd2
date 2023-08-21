@@ -432,3 +432,271 @@ warning: Error: No default engine was specified and no extension was provided.
     at ServerResponse.render (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\response.js:1039:7)
     at recoveringPassword (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:102:8)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+warning: Error: Login failed, invalid password.
+    at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:12:25)
+warning: Error: No account found with correa_alejandro92@hotmail.com
+    at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:29:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:12:25)
+warning: TypeError: Cannot read properties of undefined (reading 'id')
+    at SessionManager.signup (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:53:14)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async signup (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:44:18)
+warning: Error: No account found with correa92.dev@hotmail.com
+    at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:29:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:12:25)
+warning: Error: the permission already exists
+    at RoleMongooseRepository.addPermissions (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/RoleMongooseRepository.js:28:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async RoleManager.updateOne (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/roleManager.js:32:12)
+    at async update (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/roleController.js:50:20)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:66:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:513:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+warning: Error: Not file
+    at createDocument (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:66:13)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at done (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:513:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: id_1 dup key: { id: 12 }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: id_1 dup key: { id: 12 }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: id_1 dup key: { id: 12 }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: id_1 dup key: { id: 12 }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: code_1 dup key: { code: "XAM3" }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: code_1 dup key: { code: "XAM3" }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: id_1 dup key: { id: null }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: id_1 dup key: { id: null }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: Error: No account found with correa92@gmail.com
+    at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:29:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:12:25)
+warning: MongoServerError: E11000 duplicate key error collection: ecommerce.products index: id_1 dup key: { id: null }
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\operations\insert.js:50:33
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection_pool.js:327:21
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:207:17
+    at handleOperationResult (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\sdam\server.js:323:20)
+    at Connection.onMessage (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:206:9)
+    at MessageStream.<anonymous> (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+warning: TypeError: Cannot read properties of null (reading '_id')
+    at new Product (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/entities/Product.js:3:21)
+    at ProductMongooseRepository.findOne (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/ProductMongooseRepository.js:57:12)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async findOne (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/productsController.js:46:21)
+warning: TypeError: Cannot read properties of null (reading '_id')
+    at new Product (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/entities/Product.js:3:21)
+    at ProductMongooseRepository.findOne (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/ProductMongooseRepository.js:58:12)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async findOne (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/productsController.js:46:21)
+warning: Error: Not exist products
+    at ProductMongooseRepository.findOne (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/ProductMongooseRepository.js:57:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async findOne (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/productsController.js:46:21)
+warning: TypeError: Cannot read properties of null (reading 'products')
+    at CartMongooseRepository.getCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:28:35)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async CartManager.addToCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/CartsManager.js:47:18)
+    at async updateCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/cartsController.js:59:22)
+warning: Error: No account found with correa_alejandro92@hotmail.com
+    at MailManager.sendForgotPassword (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/MailManager.js:60:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async forgotPassword (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/mailController.js:9:5)
+warning: ReferenceError: id is not defined
+    at deleteUsers (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:96:45)
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/middleware/authorization.js:11:5
+    at Layer.handle [as handle_request] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\layer.js:95:5)
+    at next (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\express\lib\router\route.js:144:13)
+    at file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/middleware/auth.js:18:5
+    at J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\jsonwebtoken\verify.js:261:12
+    at getSecret (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\jsonwebtoken\verify.js:97:14)
+    at Object.module.exports [as verify] (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\jsonwebtoken\verify.js:101:10)
+warning: Error: ENOENT: no such file or directory, open 'J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\src\presentation\views\email\deleteAccount'
+    at Object.openSync (node:fs:590:3)
+    at Object.readFileSync (node:fs:458:35)
+    at MailManager.send (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/MailManager.js:30:23)
+    at UserManager.deleteMany (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/userManager.js:64:34)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async deleteUsers (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/userController.js:96:20)
+warning: Error: No account found with correa92.dev@gmail.com
+    at SessionManager.login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/sessionManager.js:29:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/sessionController.js:12:25)
+warning: CastError: Cast to ObjectId failed for value "664e27eb80ff1278388829d73" (type string) at path "_id" for model "cart"
+    at ObjectId.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schema\objectid.js:248:11)
+    at ObjectId.SchemaType.applySetters (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1202:12)
+    at ObjectId.SchemaType.castForQuery (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1614:15)
+    at cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\cast.js:348:32)
+    at model.Query.Query.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4816:12)
+    at model.Query.Query._castConditions (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2182:10)
+    at model.Query._findOneAndUpdate (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:3214:8)
+    at model.Query.exec (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4346:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async CartMongooseRepository.updateCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:73:26)
+warning: CastError: Cast to ObjectId failed for value "664e27eb80ff1278388829d73" (type string) at path "_id" for model "cart"
+    at ObjectId.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schema\objectid.js:248:11)
+    at ObjectId.SchemaType.applySetters (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1202:12)
+    at ObjectId.SchemaType.castForQuery (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1614:15)
+    at cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\cast.js:348:32)
+    at model.Query.Query.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4816:12)
+    at model.Query.Query._castConditions (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2182:10)
+    at model.Query._findOneAndUpdate (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:3214:8)
+    at model.Query.exec (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4346:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async CartMongooseRepository.updateCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:68:26)
+warning: CastError: Cast to ObjectId failed for value "664e27eb80ff1278388829d73" (type string) at path "_id" for model "cart"
+    at ObjectId.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schema\objectid.js:248:11)
+    at ObjectId.SchemaType.applySetters (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1202:12)
+    at ObjectId.SchemaType.castForQuery (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1614:15)
+    at cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\cast.js:348:32)
+    at model.Query.Query.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4816:12)
+    at model.Query.Query._castConditions (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2182:10)
+    at model.Query._findOneAndUpdate (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:3214:8)
+    at model.Query.exec (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4346:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async CartMongooseRepository.updateCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:68:26)
+warning: CastError: Cast to ObjectId failed for value "664e27eb80ff1278388829d73" (type string) at path "_id" for model "cart"
+    at ObjectId.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schema\objectid.js:248:11)
+    at ObjectId.SchemaType.applySetters (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1202:12)
+    at ObjectId.SchemaType.castForQuery (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1614:15)
+    at cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\cast.js:348:32)
+    at model.Query.Query.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4816:12)
+    at model.Query.Query._castConditions (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2182:10)
+    at model.Query._findOne (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2470:8)
+    at model.Query.exec (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4346:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async CartMongooseRepository.getCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:24:26)
+warning: CastError: Cast to ObjectId failed for value "664e27eb80ff1278388829d73" (type string) at path "_id" for model "cart"
+    at ObjectId.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schema\objectid.js:248:11)
+    at ObjectId.SchemaType.applySetters (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1202:12)
+    at ObjectId.SchemaType.castForQuery (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1614:15)
+    at cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\cast.js:348:32)
+    at model.Query.Query.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4816:12)
+    at model.Query.Query._castConditions (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2182:10)
+    at model.Query._findOne (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2470:8)
+    at model.Query.exec (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4346:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async CartMongooseRepository.getCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:24:26)
+warning: CastError: Cast to ObjectId failed for value "664e27eb80ff1278388829d73" (type string) at path "_id" for model "cart"
+    at ObjectId.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schema\objectid.js:248:11)
+    at ObjectId.SchemaType.applySetters (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1202:12)
+    at ObjectId.SchemaType.castForQuery (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1614:15)
+    at cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\cast.js:348:32)
+    at model.Query.Query.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4816:12)
+    at model.Query.Query._castConditions (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2182:10)
+    at model.Query._findOne (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2470:8)
+    at model.Query.exec (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4346:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async CartMongooseRepository.getCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:24:26)
+warning: CastError: Cast to ObjectId failed for value "664e27eb80ff1278388829d73" (type string) at path "_id" for model "cart"
+    at ObjectId.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schema\objectid.js:248:11)
+    at ObjectId.SchemaType.applySetters (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1202:12)
+    at ObjectId.SchemaType.castForQuery (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\schematype.js:1614:15)
+    at cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\cast.js:348:32)
+    at model.Query.Query.cast (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4816:12)
+    at model.Query.Query._castConditions (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2182:10)
+    at model.Query._findOne (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:2470:8)
+    at model.Query.exec (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4346:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async CartMongooseRepository.getCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:26:26)

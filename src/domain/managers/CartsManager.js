@@ -40,6 +40,8 @@ class CartManager {
       amount: total,
       purchase: email,
     };
+    
+
     return await this.ticketRepository.createTicket(ticket);
   }
 
@@ -136,5 +138,14 @@ class CartManager {
 
     return this.cartRepository.updateCart(cid, cart);
   }
+  async deleteCart(cid){
+    const cart = await this.cartRepository.getCart(cid);
+
+
+    if (cart.id === undefined) {
+      throw new Error("Cart id not found");
+    }
+  }
 }
+
 export default CartManager;

@@ -1,7 +1,6 @@
 import cartSchema from "../../models/mongoose/cartSchema.js";
 import Cart from "../../../domain/entities/Cart.js";
-import Product from "../../../domain/entities/Product.js";
-import mongoose from "mongoose";
+
 
 class CartMongooseRepository {
   async getOne(id) {
@@ -21,10 +20,8 @@ class CartMongooseRepository {
       products: products,
     });
   }
-
   async getCart(id) {
     const cartDocument = await cartSchema.findOne({ _id: id });
-
     const document = cartDocument.products.map((cart) => {
       return { idProduct: cart.idProduct.toString(), quantity: cart.quantity };
     });
@@ -34,7 +31,6 @@ class CartMongooseRepository {
       products: document,
     });
   }
-
   async create() {
     const cartDocument = await cartSchema.create({ products: [] });
 
@@ -46,7 +42,6 @@ class CartMongooseRepository {
       products: cartDocument.products,
     });
   }
-
   async deleteOfCart(id, data) {
     const cartDocument = await cartSchema.findOneAndUpdate(
       { _id: id },
@@ -65,7 +60,9 @@ class CartMongooseRepository {
       products: document,
     });
   }
-
+  async deleteOne(id) {
+    return await cartSchema.deleteOne({_id: id});
+  }
   async updateCart(id, data) {
     const cartDocument = await cartSchema.findOneAndUpdate({ _id: id }, data, {
       new: true,

@@ -1,32 +1,31 @@
-import { Command } from 'commander';
-import UserManager from '../../domain/managers/userManager.js';
+import { Command } from "commander";
+import SessionManager from "../../domain/managers/sessionManager.js";
 
-const AddUserCommand = new Command('addUser');
+const addUser = new Command("addUser");
 
-AddUserCommand
-  .version('0.0.1')
-  .description('Add user')
-  .option('-e, --email <email>', 'User`s email')
-  .option('-fn, --firstName <firstName>', 'User`s first name')
-  .option('-ln, --lastName <lastName>', 'User`s last name')
-  .option('-p, --password <password>', 'User`s password')
-  .option('-a, --age <age>', 'User`s age')
-  .option('-ia, --isAdmin <isAdmin>', 'User`s isAdmin')
-  .action(async(env) =>
-  {
+addUser
+  .version("0.0.1", "-v, --vers", "output the current version")
+  .description("add user from command line")
+  .option("-e, --email <email>", "User`s email")
+  .option("-fn, --firstName <firstName>", "User`s first name")
+  .option("-ln, --lastName <lastName>", "User`s last name")
+  .option("-p, --password <password>", "User`s password")
+  .option("-a, --age <age>", "User`s age")
+  .option("-ia, --isAdmin <isAdmin>", "User`s isAdmin")
+  .action(async (env) => {
+
     const payload = {
       ...env,
-      age: +env.age,
-      isAdmin: env.isAdmin === 'true',
+      age: env.age ? parseInt(env.age) : undefined,
+      isAdmin: env.isAdmin === "true" ? true : false,
+      terminal: true
     };
 
-    const manager = new UserManager();
-    const user = await manager.create(payload);
-
-    if(user)
-    {
-       console.log('User created successfully');
+    const classSM = new SessionManager();
+    const user = await classSM.signup(payload);
+    if (user) {
+      console.log("User created successfully");
     }
   });
 
-export default AddUserCommand;
+export default addUser;

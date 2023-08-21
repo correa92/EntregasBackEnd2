@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { resolve } from "path";
-import fs from 'fs'
+import fs from "fs";
 import Handlebars from "handlebars";
 
 import CartMongooseRepository from "../../data/repositories/mongoose/CartMongooseRepository.js";
@@ -44,7 +44,19 @@ class SessionManager {
     await userCreateValidation.parseAsync(payload);
     //a cart is created and linked to the user
     const cart = await this.cartRepository.create();
-    const role = await this.roleRepository.findOne({ name: "client" });
+    let role = undefined;
+
+    //terminal comes only from commander
+    if (!payload?.terminal && payload.isAdmin) {
+      payload.isAdmin = false;
+    }
+
+    if (payload?.terminal && payload.isAdmin) {
+      role = await this.roleRepository.findOne({ name: "admin" });
+    } else {
+      role = await this.roleRepository.findOne({ name: "client" });
+    }
+    delete payload?.terminal;
 
     if (role.id === undefined) {
       throw new Error("the role does not exist");
@@ -58,7 +70,6 @@ class SessionManager {
     };
 
     const user = await this.userRepository.create(dto);
-
     return { ...user, password: undefined };
   }
 
@@ -85,7 +96,7 @@ class SessionManager {
     const html = template({
       urlToken: `http://localhost:${process.env.SERVER_PORT}/api/sessions/forget-password/${token}`,
     });
-    return html
+    return html;
   }
 
   async logOut(id, data) {

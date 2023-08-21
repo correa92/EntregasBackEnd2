@@ -132,13 +132,11 @@ export const updateQuantity = async (req, res, next) => {
 
     const response = await classCM.updateQuantity(cid, pid, body);
 
-    return res
-      .status(201)
-      .json({
-        status: "success",
-        data: response,
-        message: "Cart updated successfully",
-      });
+    return res.status(201).json({
+      status: "success",
+      data: response,
+      message: "Cart updated successfully",
+    });
   } catch (e) {
     next(e);
   }

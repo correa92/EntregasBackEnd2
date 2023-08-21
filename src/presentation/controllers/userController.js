@@ -60,17 +60,16 @@ export const update = async (req, res, next) => {
 export const createDocument = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const file = req.file; 
-    
-    if (!file){
-      throw new Error('Not file');
+    const file = req.file;
+
+    if (!file) {
+      throw new Error("Not file");
     }
 
     const manager = new UserManager();
     const result = await manager.updateDocuments(id, req.body);
 
     res.send({ status: "success", result, message: "User updated." });
-
   } catch (e) {
     next(e);
   }
@@ -84,6 +83,22 @@ export const deleteOne = async (req, res, next) => {
     await manager.deleteOne(id);
 
     res.send({ status: "success", message: "User deleted." });
+  } catch (e) {
+    next(e);
+  }
+};
+
+export const deleteUsers = async (req, res, next) => {
+  try {
+    const classUM = new UserManager();
+    const result = await classUM.deleteMany();
+
+    res.send({
+      status: "success",
+      message: "Users deleted.",
+      payload: result.deletedUsers,
+      result: result.result,
+    });
   } catch (e) {
     next(e);
   }

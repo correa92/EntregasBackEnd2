@@ -119,7 +119,7 @@ let jwt = "";
 //   });
 // });
 
-describe("Testing Auth Endpoints Failed",()=>{
+describe("Testing Auth Endpoints Failed", () => {
   before(async function () {
     const { app, db } = await initServer();
     const application = app.callback();
@@ -163,7 +163,7 @@ describe("Testing Auth Endpoints Failed",()=>{
       .catch((err) => done(err));
   });
 
-    it("Login de cuenta - correo inexistente /api/sessions/login", function (done) {
+  it("Login de cuenta - correo inexistente /api/sessions/login", function (done) {
     const data = {
       email: "correo@correo.com",
       password: "165416",
@@ -174,10 +174,12 @@ describe("Testing Auth Endpoints Failed",()=>{
       .send(data)
       .then((result) => {
         const { _body, status } = result;
-        console.log('_body: ', _body);
+        console.log("_body: ", _body);
 
         expect(status).to.be.equals(400);
-        expect(_body.message).to.be.equals(`No account found with ${data.email}`);
+        expect(_body.message).to.be.equals(
+          `No account found with ${data.email}`
+        );
 
         jwt = _body.accessToken;
         done();
@@ -188,8 +190,8 @@ describe("Testing Auth Endpoints Failed",()=>{
   it("Login de cuenta - password incorrecto /api/sessions/login", function (done) {
     const data = {
       email: "Tara.Walter@hotmail.com",
-      password : "654321"
-    }
+      password: "654321",
+    };
     this.requester
       .post("/api/sessions/login")
       .send(data)
@@ -203,5 +205,4 @@ describe("Testing Auth Endpoints Failed",()=>{
       })
       .catch((err) => done(err));
   });
-
-})
+});
