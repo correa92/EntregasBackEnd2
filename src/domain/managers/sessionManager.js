@@ -94,7 +94,7 @@ class SessionManager {
     const template = Handlebars.compile(source);
 
     const html = template({
-      urlToken: `http://localhost:${process.env.SERVER_PORT}/api/sessions/forget-password/${token}`,
+      urlToken: `http://localhost:${process.env.PORT}/api/sessions/forget-password/${token}`,
     });
     return html;
   }

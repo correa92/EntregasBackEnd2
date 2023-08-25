@@ -86,8 +86,8 @@ class AppExpress {
   }
 
   listen() {
-    return this.app.listen(process.env.SERVER_PORT || 8080, () => {
-      console.log(`Desde el puerto ${process.env.SERVER_PORT} con express`);
+    return this.app.listen(process.env.PORT || 8080, () => {
+      console.log(`Desde el puerto ${process.env.PORT} con express`);
     });
   }
 }
