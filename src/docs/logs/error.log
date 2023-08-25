@@ -700,3 +700,15 @@ warning: CastError: Cast to ObjectId failed for value "664e27eb80ff1278388829d73
     at model.Query.exec (J:\Estudios Developers\CODERHOUSE\Carrera Desarrollo BackEnd\BackEnd2\node_modules\mongoose\lib\query.js:4346:28)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async CartMongooseRepository.getCart (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/data/repositories/mongoose/CartMongooseRepository.js:26:26)
+warning: Error: Empty cart
+    at CartManager.buyCar (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/CartsManager.js:28:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async buyCar (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/cartsController.js:26:18)
+warning: ReferenceError: subtotal is not defined
+    at CartManager.buyCar (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/CartsManager.js:37:18)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async buyCar (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/cartsController.js:26:18)
+warning: Error: Empty cart
+    at CartManager.buyCar (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/domain/managers/CartsManager.js:28:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async buyCar (file:///J:/Estudios%20Developers/CODERHOUSE/Carrera%20Desarrollo%20BackEnd/BackEnd2/src/presentation/controllers/cartsController.js:26:18)

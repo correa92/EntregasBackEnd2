@@ -10,6 +10,7 @@ const TicketsSchema = new Schema({
   purchase_datetime: { type: Schema.Types.Date, default: dayjs() },
   amount: { type: Schema.Types.Number, require: true },
   purchase: { type: Schema.Types.String, require: true, trim: true },
+  list: { type: [{}], default:[] },
 });
 TicketsSchema.plugin(mongoosePaginate);
 

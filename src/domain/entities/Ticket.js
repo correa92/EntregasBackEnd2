@@ -5,6 +5,7 @@ class Ticket {
     this.purchase_datetime = props.purchase_datetime;
     this.amount = props.amount;
     this.purchase = props.purchase;
+    this.list = props.list;
   }
 }
 

@@ -24,23 +24,41 @@ class CartManager {
       throw new Error("Cart id not found");
     }
 
+    if (cart.products.length === 0) {
+      throw new Error("Empty cart");
+    }
+
     let total = 0;
-    for (const e of cart.products) {
-      const product = await this.productRepository.findOne(e.idProduct);
+    let products = [];
+    for (const p of cart.products) {
+      const product = await this.productRepository.findOne(p.idProduct);
 
-      if (e.quantity <= product.stock) {        
-        total += product.price * e.quantity;
-
-        await this.productRepository.updateStock(e.idProduct, e.quantity);
-        await this.cartRepository.deleteOfCart(cart.id, e.idProduct);
+      if (p.quantity <= product.stock) {
+        const subtotal = product.price * p.quantity;
+        total += subtotal;
+        const prod = await this.productRepository.updateStock(
+          p.idProduct,
+          p.quantity
+        );
+        products.push({
+          product: prod.title,
+          quantity: p.quantity,
+          subtotal: subtotal,
+          thumbnail: product.thumbnail[0],
+        });
+        await this.cartRepository.deleteOfCart(cart.id, p.idProduct);
+      } else {
+        throw new Error(
+          "The selected quantity cannot exceed the current stock"
+        );
       }
     }
     const ticket = {
       code: v4(),
       amount: total,
       purchase: email,
+      list: products,
     };
-    
 
     return await this.ticketRepository.createTicket(ticket);
   }
@@ -138,9 +156,8 @@ class CartManager {
 
     return this.cartRepository.updateCart(cid, cart);
   }
-  async deleteCart(cid){
+  async deleteCart(cid) {
     const cart = await this.cartRepository.getCart(cid);
-
 
     if (cart.id === undefined) {
       throw new Error("Cart id not found");
