@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
@@ -12,16 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/correa92/EntregasBackEnd.git"
+    "url": "git+https://github.com/correa92/EntregasBackEnd2.git"
   },
   "keywords": [],
   "author": "",
   "type": "module",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/correa92/EntregasBackEnd/issues"
+    "url": "https://github.com/correa92/EntregasBackEnd2/issues"
   },
-  "homepage": "https://github.com/correa92/EntregasBackEnd#readme",
+  "homepage": "https://github.com/correa92/EntregasBackEnd2#readme",
   "dependencies": {
     "awilix": "^8.0.1",
     "bcrypt": "^5.1.0",
