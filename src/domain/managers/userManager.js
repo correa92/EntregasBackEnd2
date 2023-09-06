@@ -48,7 +48,12 @@ class UserManager {
     const currentDate = dayjs();
     const subDate = currentDate.subtract(2, "day").toDate();
 
-    const filter = { last_connection: { $lte: subDate } };
+    const filter = {
+      $and: [
+        { last_connection: { $lte: subDate } }, // last_connection <= subDate
+        { isAdmin: { $ne: true } } // isAdmin no es igual a true
+      ]
+    };
 
     //search for users who will be deleted
     const users = await this.userRepository.find(filter);
